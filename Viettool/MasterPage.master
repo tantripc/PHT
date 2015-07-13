@@ -1,0 +1,150 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="Viettool_MasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head runat="server">
+    <title>Cap Nhat - Website</title>
+    <link href="../Styles/MyStyle.css" rel="stylesheet" type="text/css" />
+    <link href="images/style_viettool.css" rel="stylesheet" type="text/css" />
+    <script src="../Scripts/jquery-1.4.3.js" type="text/javascript"></script>
+    <style type="text/css">
+    <!--
+    body {
+	    margin-top: 0px;
+    }
+        .style3
+        {
+            width: 64px;
+        }
+        .style4
+        {
+            width: 72px;
+        }
+        .style5
+        {
+            width: 79px;
+        }
+        .style6
+        {
+            width: 78px;
+        }
+    -->
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <asp:ScriptManager ID="ScriptManager1" runat="server">
+    </asp:ScriptManager>
+<table width="890" border="0" cellspacing="0" cellpadding="0" align="center">
+  <tr>
+    <td>
+                <table align="right" border="0"  cellspacing="0" cellpadding="0" style="font-size: 8pt; cursor: hand; font-family: Verdana; margin-left: 8px; margin-top: 4px; width: 545px;">
+      <tr>
+        <td width="84%" nowrap style="height: 14px" align="right"><font color="#FF0000">&nbsp;</font>
+            <img id="imgQT" runat="server" border="0" src="images/quantri.gif" style="width: 17px; height: 12px"><span style="color: #ff0000;"><a id="aQT" runat="server" class="topLink" href="QuanTri.aspx">Quản trị</a>&nbsp;
+            <img border="0" src="images/pass.gif" style="width: 17px; height: 12px"><a class="topLink" href="DoiMatKhau.aspx">Đổi mật khẩu</a>&nbsp; 
+                <img border="0" src="images/bclocked_icon.gif" width="11" height="14">
+                &nbsp;<asp:LinkButton ID="LinkButton2" runat="server" 
+                CausesValidation="false" CssClass="topLink" OnClick="LinkButton1_Click">Thoát</asp:LinkButton>&nbsp; [
+                <asp:Label ID="lblUserName" runat="server"></asp:Label>
+                ] &nbsp;&nbsp; &nbsp; &nbsp;</td>              
+      </tr>
+    </table>
+                    <a href="../ViettoolEng/Default.aspx"><img src="../images/flag_e.png" width="20"
+                        height="12" border="0" /></a></td>
+  </tr>
+  <tr>
+    <td height="37" align="center" valign="bottom"><img src="images/panel.png" 
+            width="890" height="152" /></td>
+  </tr>
+  <tr>
+    <td>
+        <div style="float:left;width:890px;min-height:1px">
+            <b class="b1"></b><b class="b2"></b><b class="b3"></b><b class="b4"></b>
+            <div class="contentb" style="min-height:1px">
+                <div style="margin-left:auto;margin-right:auto;width:860px;min-height:1px">
+                    <div style="clear:both;height:5px;font-size:0px"></div>
+                    <div style="float:left;min-height:1px">
+                        <a class="viettoolHoMenuText" href="Default.aspx">Trang chủ</a>
+                    </div>
+                    <div style="float:left;width:10px;min-height:1px"></div>
+                    <div style="float:left;min-height:1px">
+                        <a class="viettoolHoMenuText" href="ChiTietTTin.aspx">Thông tin</a>
+                    </div>
+                    <div style="float:left;width:10px;min-height:1px"></div>
+                    <div style="float:left;min-height:1px">
+                        <a class="viettoolHoMenuText" href="QuangCao.aspx">Quảng cáo</a>
+                    </div>
+                    <div style="float:left;width:10px;min-height:1px"></div>
+                    <div style="float:left;min-height:1px">
+                        <a class="viettoolHoMenuText" href="PanelNgang.aspx">Panel ngang</a>
+                    </div>
+                    <div style="float:left;width:10px;min-height:1px"></div>
+                    <div style="float:left;min-height:1px">
+                        <a class="viettoolHoMenuText" href="PanelTrai.aspx">Panel trái</a>
+                    </div>
+                    <div style="float:left;width:10px;min-height:1px"></div>
+                    <div style="float:left;min-height:1px">
+                        <a class="viettoolHoMenuText" href="PanelPhai.aspx">Panel phải</a>
+                    </div>
+                    <div style="float:left;width:10px;min-height:1px"></div>
+                    <div style="float:left;min-height:1px">
+                        <a class="viettoolHoMenuText" href="SPMoi.aspx">SP mới</a>
+                    </div><div style="float:left;width:10px;min-height:1px"></div>
+                    <div style="float:left;min-height:1px">
+                        <a class="viettoolHoMenuText" href="Websites.aspx">Website đã thực hiện</a>
+                    </div>
+                    <div style="float:left;width:10px;min-height:1px"></div>
+                    <div style="float:left;min-height:1px">
+                        <a class="viettoolHoMenuText" href="gopy.aspx">Hỏi đáp</a>
+                    </div>
+                    <div style="float:left;width:10px;min-height:1px"></div>
+                    <div style="float:left;min-height:1px">
+                        <a class="viettoolHoMenuText" href="ChiTietTT.aspx?nid=19&cid=83&tde=Tin tức nổi bật">Tin tức</a>
+                    </div>
+                    <div style="float:left;width:10px;min-height:1px"></div>
+                    <div style="float:left;min-height:1px">
+                        <a class="viettoolHoMenuText" href="QuanTriUsers.aspx">Thành viên</a>
+                    </div>
+                    <div style="clear:both;height:10px;font-size:0px"></div>
+                    <div style="float:left;min-height:1px">
+                        <a class="viettoolHoMenuText" href="Support.aspx">Support</a>
+                    </div>
+                    <div style="clear:both;height:5px;font-size:0px"></div>
+                </div>
+            </div>
+            <b class="b4"></b><b class="b3"></b><b class="b2"></b><b class="b1"></b>
+        </div>
+    </td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><table width="890" border="0" align="center" cellpadding="0" cellspacing="0">
+      <tr>
+        <td valign="bottom"><img src="images/line_trang_970_tren.gif" width="890" height="5" /></td>
+      </tr>
+      <tr>
+        <td background="images/line_trang_970_giua.gif" style="background-repeat:repeat-y">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+          </td>
+      </tr>
+      <tr>
+        <td valign="top"><img src="images/line_trang_970.gif" width="890" height="5" /></td>
+      </tr>
+      </table>
+      </td>
+  </tr>
+  <tr>
+    <td valign="bottom">&nbsp;</td>
+  </tr>
+</table>
+    </form>
+    <p>
+&nbsp;
+    </p>
+</body>
+</html>

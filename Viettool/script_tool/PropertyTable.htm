@@ -1,0 +1,393 @@
+<html>
+<head>
+<meta NAME="GENERATOR" Content="Microsoft FrontPage 5.0">
+<meta NAME="ROBOTS" CONTENT="noindex">
+<title>Table property </title>
+<link rel="stylesheet" href="popup.css" type="text/css">
+<script language="JavaScript" src="makecolor.js" type="text/javascript"></script>
+<script language="JavaScript" src="toolkey.js" type="text/javascript"></script>
+<script language="JavaScript">
+ var sData = dialogArguments;
+ var objtbl=sData.clicktbl;
+ var aDat=document.all;
+ var autoColor;
+ var moreColor;
+ var selectColor="000000";
+ var nameColor;
+ var valueColor;
+ var viewObjColor;
+ var textObjColor;
+	window.onload = function () {
+   {autoDialogHeight();getpropertytable();}
+}
+function autoDialogHeight() {
+  var h = document.body.scrollHeight;
+  var w = document.body.scrollWidth;
+}
+function hiddencolor(){
+  var e = window.event.srcElement;
+  if(e.tagName!="IMG") colorpick.style.visibility="hidden";
+}
+function getpropertytable(){
+ if(objtbl.width!=""){
+    if(objtbl.width!=(objtbl.width).replace("%","")){pixper.value="%";}
+	inwidth.value=(objtbl.width).replace("%","");
+ }else specifywidth.click();
+ if(objtbl.height!="") inheight.value=objtbl.height;
+ else specifyheight.click();
+ 
+ inalign.value=objtbl.align+"";
+ insize.value=objtbl.border;
+ cellspacing.value=objtbl.cellSpacing;
+ cellpadding.value=objtbl.cellPadding;
+ 
+ if(objtbl.bgColor!="") setviewColor(objtbl.bgColor,"bgcltext","bgclview");
+ if(objtbl.borderColor!="") setviewColor(objtbl.borderColor,"bdcltext","bdclview");
+ if(objtbl.borderColorDark!="") setviewColor(objtbl.borderColorDark,"darkcltext","darkclview");
+ if(objtbl.borderColorLight!="") setviewColor(objtbl.borderColorLight,"lightcltext","lightclview");
+}
+function setviewColor(valcolor,textObjCl,viewObjCl){
+	aDat[textObjCl].innerHTML="";
+	aDat[viewObjCl].style.backgroundColor=valcolor;
+	aDat[viewObjCl].style.width=67;
+}
+function Setpropertytable(){
+	if(specifywidth.checked){
+		objtbl.style.width="";
+		if(pixper.value=="%")objtbl.width=inwidth.value+"%";
+		else objtbl.width=inwidth.value;
+	}else objtbl.width="";
+	if(specifyheight.checked)objtbl.height=inheight.value;
+	else objtbl.height="";
+	objtbl.align=inalign.value;
+	objtbl.border=insize.value;
+	objtbl.cellSpacing=cellspacing.value;
+	objtbl.cellPadding=cellpadding.value;
+	objtbl.style.borderCollapse="collapse";
+	//objtbl.borderColor="#000000"
+	//border-collapse: collapse
+
+	if(bgcltext.innerHTML=="Automatic")objtbl.bgColor="";
+	else objtbl.bgColor=bgclview.style.backgroundColor;
+	
+	if(bdcltext.innerHTML=="Automatic")objtbl.borderColor="#000000";
+	else objtbl.borderColor=bdclview.style.backgroundColor;
+	
+	if(darkcltext.innerHTML=="Automatic")objtbl.borderColorDark="";
+	else objtbl.borderColorDark=darkclview.style.backgroundColor;
+	
+	if(lightcltext.innerHTML=="Automatic")objtbl.borderColorLight="";
+	else objtbl.borderColorLight=lightclview.style.backgroundColor;
+	
+	setTimeout("sData.timtableborder0('oDivttt');sData.timtableborder0('oDivndg')",200);
+	
+}
+function showpickcolor(nameObj,colorObj,viewObj,textObj,xObj,yObj){
+	autoColor=colorObj;
+	nameColor=nameObj;
+	viewObjColor=viewObj;
+	textObjColor=textObj;
+	picksample.style.backgroundColor=colorObj;
+	colorpick.style.visibility="visible";
+	colorpick.style.left=xObj;
+	colorpick.style.top=yObj;
+}
+function ChangetableColor(valcolor){
+	aDat[textObjColor].innerHTML="";
+	aDat[viewObjColor].style.backgroundColor="#"+valcolor;
+	aDat[viewObjColor].style.width=67;
+	colorpick.style.visibility="hidden";
+	selectColor=valcolor;
+	
+	len=sData.bdcltableold.length;
+	var koco=true;
+	for(var i=0;i<=len;i++){
+		if(sData.bdcltableold[i]==valcolor){i=len;koco=false;}
+	}
+	if(koco){
+		if(len<8){sData.bdcltableold[len]=valcolor;
+		}else{
+			for(var i=0;i<len;i++){
+				sData.bdcltableold[i]=sData.bdcltableold[i+1];
+			}
+			sData.bdcltableold[len-1]=valcolor;	
+		}
+	}	
+}
+function autotableColor(){
+	aDat[textObjColor].innerHTML="Automatic";
+	aDat[viewObjColor].style.backgroundColor=autoColor;
+	aDat[viewObjColor].style.width=13;
+	colorpick.style.visibility="hidden";
+}
+function _getTblCol() {
+ if (document.createAttribute) {
+	retCol=aDat[viewObjColor].style.backgroundColor;
+   var retCol = dlgColHelperTbl.ChooseColorDlg(aDat[viewObjColor].style.backgroundColor);
+   retCol = retCol.toString(16);
+   if (retCol.length < 6) {
+     var tmp = "000000".substring(0,6-retCol.length);
+     retCol = tmp.concat(retCol);
+   }
+ }
+ if("#"+retCol==aDat[viewObjColor].style.backgroundColor){return;}
+ selectColor= retCol;
+ ChangetableColor(selectColor);
+}
+function clickspecify(oBjsp){
+	if(oBjsp=="specifywidth"){
+		if(!specifywidth.checked){
+			pixper.disabled=true;
+			inwidth.disabled=true;
+		}else{
+			pixper.disabled=false;inwidth.disabled=false;
+		}
+	}else{ 
+		if(!specifyheight.checked){
+			inheight.disabled=true;
+		}else {
+			inheight.disabled=false;
+		}
+	} 
+}
+</script>
+</head>
+<body onclick="hiddencolor();">
+<br>
+	<table border="0" width="99%" cellspacing="0" cellpadding="0">
+	  <tr>
+	    <td width="9%">&nbsp;&nbsp;Layout11:</td>
+	    <td width="91%"><div class="separator2"> </div></td>
+	  </tr>
+	</table>
+<center>	
+<table border="0" width="91%" cellspacing="0" cellpadding="0" height="101">
+  <tr>
+    <td width="50%">
+      <table border="0" width="100%" cellspacing="2" cellpadding="0">
+        <tr>
+          <td width="50%">Alignment:</td>
+          <td width="50%" align="right">
+          <select size="1" name="D1" id="inalign">
+              <option selected value>Default</option>
+              <option value="left">Left</option>
+              <option value="right">Right</option>
+              <option value="center">Center</option>
+            </select></td>
+        </tr>
+        <tr>
+          <td width="50%"></td>
+          <td width="50%" align="right">
+		</td>
+        </tr>
+        <tr>
+          <td width="50%">Cell Padding:</td>
+          <td width="50%" align="right">
+          <input id="cellpadding" type="text" name="inpadding" size="5" value="0" onkeydown="numberKey();"></td>
+        </tr>
+        <tr>
+          <td width="50%">Cell Spacing:</td>
+          <td width="50%" align="right">
+          <input id="cellspacing" type="text" name="inspacing" size="5" onkeydown="numberKey();"></td>
+        </tr>
+      </table>
+    </td>
+    <td width="50%" height="101">
+      <table border="0" width="100%" cellspacing="0" cellpadding="0">
+        <tr>
+          <td width="8%"><input id="specifywidth" type="checkbox" name="C1" checked value="ON" onclick="clickspecify(&quot;specifywidth&quot;)"></td>
+          <td width="43%">Specify width:</td>
+          <td width="49%"></td>
+        </tr>
+        <tr>
+          <td width="8%"></td>
+          <td width="43%" valign="top" align="right">
+            <input type="text" id="inwidth" size="5" value="100" onkeydown="numberKey();"></td>
+          <td width="49%">
+          <select size="1" id="pixper">
+              <option selected value>pixels</option>
+              <option value="%">percent</option>
+            </select></td>
+        </tr>
+        <tr>
+          <td width="8%"><input id="specifyheight" type="checkbox" name="C1" checked value="ON" onclick="clickspecify(&quot;specifyheight&quot;)"></td>
+          <td width="43%">Specify height:</td>
+          <td width="49%"></td>
+        </tr>
+        <tr>
+          <td width="8%"></td>
+          <td width="43%" valign="top" align="right">
+            <input type="text" id="inheight" size="5" value="100" onkeydown="numberKey();"></td>
+          <td width="49%">&nbsp;pixels</td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+</center>
+	
+	<table border="0" width="99%" cellspacing="0" cellpadding="0">
+	  <tr>
+	    <td width="5%">&nbsp;&nbsp;Borders:</td>
+	    <td width="95%"><div class="separator2"></div></td>
+	  </tr>
+	</table>
+<center>
+<table border="0" width="93%" cellspacing="2" cellpadding="0">
+  <tr>
+    <td width="50%">
+      <table border="0" width="100%" cellspacing="5" cellpadding="0">
+        <tr>
+          <td width="50%">Size:</td>
+          <td width="50%" align="right">
+            <input type="text" id="insize" size="5" value="1" onkeydown="numberKey();">
+          </td>
+        </tr>
+        <tr>
+          <td width="50%">Color:</td>
+          <td width="50%" align="right">
+			<div style="border:1 #7F9DB9 solid;widht:30px">
+				<table border="0" width="98%" cellspacing="0" cellpadding="0">
+				  <tr><td width="1%" STYLE="Font-size:1px">
+				  <div id="bdclview" style="overflow: hidden; width: 13; height: 13; background-color: #000000; border: 1px solid #a0a0a0; margin: 1px; padding: 1px"></div>
+				  </td>
+				    <td width="50%" STYLE="Font-size:12px" align="center" id="bdcltext">Automatic</td>
+				  <td width="40" STYLE="Font-size:12px" align="right">
+				  <img SRC="../Images/buttondown.jpg" align="middle" onclick="showpickcolor(&quot;bordercolor&quot;,&quot;#000000&quot;,&quot;bdclview&quot;,&quot;bdcltext&quot;,&quot;45px&quot;,&quot;192px&quot;);" WIDTH="17" HEIGHT="17"></td>  
+				  </tr>
+				</table>
+			</div>
+		 </td>
+        </tr>
+      </table>
+    </td>
+    <td width="50%">
+      <table border="0" width="100%" cellspacing="5" cellpadding="0">
+        <tr>
+          <td width="50%">Light border:</td>
+          <td width="50%" align="right">
+			<div style="border:1 #7F9DB9 solid;widht:30px">
+				<table border="0" width="98%" cellspacing="0" cellpadding="0">
+				  <tr><td width="1%" STYLE="Font-size:1px">
+				  <div id="lightclview" style="overflow: hidden; width: 13; height: 13; background-color: #000000; border: 1px solid #a0a0a0; margin: 1px; padding: 1px"></div>
+				  </td>
+				    <td width="50%" STYLE="Font-size:12px" align="center" id="lightcltext">Automatic</td>
+				  <td width="40" STYLE="Font-size:12px" align="right">
+				  <img SRC="../Images/buttondown.jpg" align="middle" onclick="showpickcolor(&quot;lightcolor&quot;,&quot;#000000&quot;,&quot;lightclview&quot;,&quot;lightcltext&quot;,&quot;245px&quot;,&quot;167px&quot;);" WIDTH="17" HEIGHT="17"></td>  
+				  </tr>
+				</table>
+			</div>
+           </td>
+        </tr>
+        <tr>
+          <td width="50%">Dark border:</td>
+          <td width="50%">
+				<div style="border:1 #7F9DB9 solid;widht:30px">
+					<table border="0" width="98%" cellspacing="0" cellpadding="0">
+					  <tr><td width="1%" STYLE="Font-size:1px">
+					  <div id="darkclview" style="overflow: hidden; width: 13; height: 13; background-color: #ffffff; border: 1px solid #a0a0a0; margin: 1px; padding: 1px"></div>
+					  </td>
+					    <td width="50%" STYLE="Font-size:12px" align="center" id="darkcltext">Automatic</td>
+					  <td width="40" STYLE="Font-size:12px" align="right">
+					  <img SRC="../Images/buttondown.jpg" align="middle" onclick="showpickcolor(&quot;darkcolor&quot;,&quot;#ffffff&quot;,&quot;darkclview&quot;,&quot;darkcltext&quot;,&quot;245px&quot;,&quot;191px&quot;);" WIDTH="17" HEIGHT="17"></td>  
+					  </tr>
+					</table>
+				</div>
+           </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+</center>	
+	<table border="0" width="99%" cellspacing="0" cellpadding="0">
+	  <tr>
+	    <td width="9%">&nbsp;&nbsp;Background</td>
+	    <td width="91%"><div class="separator2"> </div></td>
+	  </tr>
+	</table>
+<center>
+<table border="0" width="91%" cellspacing="2" cellpadding="0">
+  <tr>
+    <td width="24%">Color:</td>
+    <td width="25%" align="right">
+    <div style="border:1 #7F9DB9 solid;widht:30px">
+ 		<table border="0" width="98%" cellspacing="0" cellpadding="0">
+		  <tr><td width="1%" STYLE="Font-size:1px">
+		  <div id="bgclview" style="overflow: hidden; width:13; height: 13; background-color: #ffffff; border: 1px solid #a0a0a0; margin: 1px; padding: 1px"></div>
+		  </td>
+		    <td width="50%" STYLE="Font-size:12px" align="center" id="bgcltext">Automatic</td>
+		    <td width="40" STYLE="Font-size:12px" align="right">
+		    <img SRC="../Images/buttondown.jpg" align="middle" onclick="showpickcolor(&quot;bgcolor&quot;,&quot;#ffffff&quot;,&quot;bgclview&quot;,&quot;bgcltext&quot;,&quot;49px&quot;,&quot;195px&quot;);" WIDTH="17" HEIGHT="17"></td>  
+		  </tr>
+		</table>
+    </div>
+   </td>
+    <td width="26%">
+    </td>
+    <td width="25%"></td>
+  </tr>
+</table>
+</center>
+	<br><br><br><br><br><br><br><br><br>
+	<table border="0" width="99%" cellspacing="0" cellpadding="0">
+	  <tr>
+	    <td width="100%"><div class="separator2"></div></td>
+	  </tr>
+	</table>
+  <table border="0" cellspacing="7" cellpadding="0" width="95%" align="center">
+   <tr>
+    <td width="100%" colspan="4" align="right">
+	<input type="button" value="Ok" class="buttons" onClick="Setpropertytable();window.close()" id="button2" name="button2">
+	&nbsp;
+	<input type="button" value="Cancel" class="buttons" onClick="window.close();" id="button3" name="button3">
+	&nbsp;
+	<input type="button" value="Apply" class="buttons" onClick="Setpropertytable();" id="button2" name="button2">
+	</td>
+   </tr>
+  </table>
+
+<object id="dlgColHelperTbl" height="0px" width="0px" classid="clsid:3050f819-98b5-11cf-bb82-00aa00bdce0b"></object>
+<div id="imgfull" style="VISIBILITY: hidden; POSITION: absolute">
+</div>
+
+<div class="bong" id="colorpick" class="tooldiv" STYLE="LEFT: 545px;top:157px;VISIBILITY: hidden; POSITION: absolute;PADDING: 4px;border:#002D96 solid 1px; WIDTH: 162px; HEIGHT: 105px; BACKGROUND-COLOR:#F6F6F6;">
+	<div class="separator11" align="center" style="padding-top:1px;"><img SRC="/webtool/Imgtoolbar/chamngan.gif" WIDTH="80" HEIGHT="10"></div>
+	<table class="tbtool" border="0" width="100%" cellspacing="0" cellpadding="0">
+	  <tr><td class="tdtool" unselectable="on" align="left" style="BORDER:#c0c0c0 solid 1px;" onclick1="ChangeFontColor('ForeColor','')">
+			<div class="tooldiv" nowrap unselectable="on" onclick="autotableColor();" onmousedown="spcMousedown(this)" onmouseup="spcUp(this)" onmouseout="spcOut(this)" onmouseover="spcOver(this)" title="FF0000" STYLE="PADDING: 0px;MARGIN:2px;border:1 solid #606060; WIDTH: 146px; HEIGHT: 13px;cursor:default;">
+			<table class="tbtool" border="0" width="100%" cellspacing="0" cellpadding="0">
+			  <tr><td class="tooldiv" width="1%" STYLE="Font-size:1px"><div id="picksample" style="overflow: hidden; width: 13; height: 13; background-color: #000000; border: 1px solid #a0a0a0; margin: 1px; padding: 1px"></div></td>
+			    <td class="tdtool" width="99%" STYLE="Font-size:12px" align="center">Automatic&nbsp;&nbsp;</td>
+			  </tr>
+			</table>
+			</div>
+	  </td></tr>
+	</table>
+	<table class="tbtool" border="0" width="100%" cellspacing="0" cellpadding="0">
+	  <tr><td class="tdtool" width="99%" STYLE="Font-size:11px" align="center">&nbsp;Standard Colors</td></tr>
+	</table>
+	<table class="tbtool" border="0" cellspacing="0" cellpadding="0" width="10" style="MARGIN-TOP:4px;">
+        <script> document.write(writeColBoxestable(addcolor));</script>
+	</table>
+		<div class="separator21"></div>
+	<table class="tbtool" border="0" cellspacing="0" cellpadding="0" width="10" style="MARGIN-TOP:4px;">
+        <script>document.write(writeColBoxestable(addcolordung));</script>
+	</table>
+	<table class="tbtool" border="0" cellspacing="0" cellpadding="0" width="10" style="MARGIN-TOP:4px;">
+        <script>document.write(writeColBoxestable(sData.bdcltableold));</script>
+	</table>
+	<div class="separator21"></div>
+	<table class="tbtool" border="0" width="100%" cellspacing="0" cellpadding="0" style="BORDER:#c0c0c0 solid 1px; ">
+	  <tr><td class="tdtool" unselectable="on" align="center" style="BORDER:#f6f6f6 solid 1px; ">
+			<div class="tooldiv" onclick="_getTblCol();" onmousedown="spcMousedown(this)" onmouseup="spcUp(this)" onmouseout="spcOut(this)" onmouseover="spcOver(this)" title="FF0000" STYLE="WIDTH: 149px; HEIGHT: 14px;cursor:default;padding:3px">
+			<center>More Colors...</center></div>
+	  </td></tr>
+	</table>
+</div>
+
+
+
+
+</body>
+</html>

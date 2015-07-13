@@ -1,0 +1,8 @@
+﻿body {
+}
+
+.pages { color: #999 }
+.pages a, .pages .cpb { text-decoration:none; padding: 0 5px; border: 1px solid #ddd;background: #FFFFB3;margin:0 2px; font-size:11px; color:#800000;}
+.pages a:hover { background-color: #FB7D00; color:#FFFFFF;border:1px solid #FB7D00; text-decoration:none;}
+.pages .cpb { font-weight: bold; color: #FFFFFF; background: #FB7D00; border:1px solid #FB7D00;}
+.code{font-weight:bold;color:blue}

@@ -1,0 +1,679 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Database Name="PTHSecurity" Class="DataClassesDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=.;Initial Catalog=PTHSecurity;User ID=sa" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="PTHSecurityConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.GOPY_D" Member="GOPY_Ds">
+    <Type Name="GOPY_D">
+      <Column Name="GOPY_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="LOAI" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TIEUDE" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="HOTEN" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="DIACHI" Type="System.String" DbType="NVarChar(300)" CanBeNull="true" />
+      <Column Name="DIENTHOAI" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="MAIL" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="NOIDUNG" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="NGAY" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ktra" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="xoa" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="nguoixem" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="noidungtraloi" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="traloi" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ngaytraloi" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="phanbiet" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Ma1" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Ma2" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="USERID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.WEBSITES" Member="WEBSITEs">
+    <Type Name="WEBSITE">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TITLE" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="LINK" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.NEWS_ITEM" Member="NEWS_ITEMs">
+    <Type Name="NEWS_ITEM">
+      <Column Name="sobai" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MaBDS" Type="System.String" DbType="Char(20)" CanBeNull="true" />
+      <Column Name="TypeGiaoDich" Type="System.String" DbType="Char(20)" CanBeNull="true" />
+      <Column Name="TypeGiaoDich1" Type="System.String" DbType="Char(100)" CanBeNull="true" />
+      <Column Name="typeBDS" Type="System.String" DbType="Char(20)" CanBeNull="true" />
+      <Column Name="typeBDS1" Type="System.String" DbType="Char(100)" CanBeNull="true" />
+      <Column Name="province" Type="System.String" DbType="Char(20)" CanBeNull="true" />
+      <Column Name="province1" Type="System.String" DbType="Char(100)" CanBeNull="true" />
+      <Column Name="district" Type="System.String" DbType="Char(20)" CanBeNull="true" />
+      <Column Name="district1" Type="System.String" DbType="Char(100)" CanBeNull="true" />
+      <Column Name="address" Type="System.String" DbType="Char(300)" CanBeNull="true" />
+      <Column Name="lenght" Type="System.String" DbType="Char(4)" CanBeNull="true" />
+      <Column Name="width" Type="System.String" DbType="Char(4)" CanBeNull="true" />
+      <Column Name="dtichXD" Type="System.String" DbType="Char(20)" CanBeNull="true" />
+      <Column Name="dtichsudung" Type="System.String" DbType="Char(20)" CanBeNull="true" />
+      <Column Name="front" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="alley" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="distance" Type="System.String" DbType="Char(50)" CanBeNull="true" />
+      <Column Name="direction" Type="System.String" DbType="Char(20)" CanBeNull="true" />
+      <Column Name="direction1" Type="System.String" DbType="Char(100)" CanBeNull="true" />
+      <Column Name="price" Type="System.String" DbType="Char(100)" CanBeNull="true" />
+      <Column Name="unit" Type="System.String" DbType="Char(20)" CanBeNull="true" />
+      <Column Name="unit1" Type="System.String" DbType="Char(50)" CanBeNull="true" />
+      <Column Name="timeperiod" Type="System.String" DbType="Char(20)" CanBeNull="true" />
+      <Column Name="timeperiod1" Type="System.String" DbType="Char(100)" CanBeNull="true" />
+      <Column Name="title" Type="System.String" DbType="Char(255)" CanBeNull="true" />
+      <Column Name="description" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Picture1" Type="System.String" DbType="Char(255)" CanBeNull="true" />
+      <Column Name="Picture2" Type="System.String" DbType="Char(255)" CanBeNull="true" />
+      <Column Name="Picture3" Type="System.String" DbType="Char(255)" CanBeNull="true" />
+      <Column Name="Picture4" Type="System.String" DbType="Char(255)" CanBeNull="true" />
+      <Column Name="Picture5" Type="System.String" DbType="Char(255)" CanBeNull="true" />
+      <Column Name="yeartobuild" Type="System.String" DbType="Char(20)" CanBeNull="true" />
+      <Column Name="donghonuoc1" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="donghonuoc" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="donghodien" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="Notoilet" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="Nobedroom" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="Nobadroom" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="Nolivingroom" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="NoBathroom" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="NoFloor" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="FloorNo" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="Nengo" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="Nentham" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="Nen" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="Nengach" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="Cua" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="Cuakieng" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="Cuagokieng" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="Cuanhomkieng" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="Cuago" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="Cuanhom" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="Cuasat" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="Cuakhac" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="Nodieuhoa" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="Nomaynuocnong" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="baove" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="gara" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="santhuong" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="thangmay" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="dienthoai" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="chodauoto" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="hoboi" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="TVCab" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="ADSL" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="sanvuon" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="gancho" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="truongcap1" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="truongcap2" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="truongcap3" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="benhvien" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="trungtamthuongmai" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="maugiao" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="khudantri" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="congvien" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="trungtamgiaitri" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="DH_CD" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="Benxe" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="khuCN" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="tienlamvanphong" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="tienbuonban" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="So" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="sodo" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="sohong" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="giaytay" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="ngaydang" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ngayhethan" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="solanxem" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="tinkohople" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="hethan" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="Nickname" Type="System.String" DbType="Char(20)" CanBeNull="true" />
+      <Column Name="VIP" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="Char(100)" CanBeNull="true" />
+      <Column Name="address1" Type="System.String" DbType="Char(255)" CanBeNull="true" />
+      <Column Name="tel" Type="System.String" DbType="Char(50)" CanBeNull="true" />
+      <Column Name="mobi" Type="System.String" DbType="Char(50)" CanBeNull="true" />
+      <Column Name="email" Type="System.String" DbType="Char(50)" CanBeNull="true" />
+      <Column Name="hidename" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="hideaddress" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="hidetel" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="ghichu" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="store1" Type="System.String" DbType="Char(20)" CanBeNull="true" />
+      <Column Name="store2" Type="System.String" DbType="Char(20)" CanBeNull="true" />
+      <Column Name="store3" Type="System.String" DbType="Char(100)" CanBeNull="true" />
+      <Column Name="store4" Type="System.String" DbType="Char(100)" CanBeNull="true" />
+      <Column Name="loaitinraovat" Type="System.String" DbType="Char(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.NGUOIDUNG" Member="NGUOIDUNGs">
+    <Type Name="NGUOIDUNG">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ten" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="password" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="email" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="hoten" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="aclevel" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NOTE" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Register" Member="Registers">
+    <Type Name="Register">
+      <Column Name="idRegister" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Nickname" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="address" Type="System.String" DbType="NVarChar(300)" CanBeNull="true" />
+      <Column Name="tel" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="mobi" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="password" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="email" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="dateCreate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="member" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="admin" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="refuse" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="SendMail" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="isVIP" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="isLock" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SANPHAM" Member="SANPHAMs">
+    <Type Name="SANPHAM">
+      <Column Name="NEWS_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MAHH" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NHOMHANG" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CHANNEL_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TENHANG" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="CAP_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TOMTAT" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="NOIDUNG" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="NGAY" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="USERID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DACTINH" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="STT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="GIA" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="BAOHANH" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="KHUYENMAI" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="USD_VND" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="TENSANPHAM" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="XUATXU" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="HINH" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="HINHNHO" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Period" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Fix" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ISNEW_NEWS" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TopImage" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="ViTri" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="DienTich" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="KinhPhi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="HoanThanh" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ChuDauTu" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="ThietKe" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="ThiCong" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="GiamSat" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="TieuBieu" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="HinhThuc" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QUANGCAO" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SANPHAM_ENG" Member="SANPHAM_ENGs">
+    <Type Name="SANPHAM_ENG">
+      <Column Name="NEWS_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MAHH" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NHOMHANG" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CHANNEL_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TENHANG" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="CAP_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TOMTAT" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="NOIDUNG" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="NGAY" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="USERID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DACTINH" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="STT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="GIA" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="BAOHANH" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="KHUYENMAI" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="USD_VND" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="TENSANPHAM" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="XUATXU" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="HINH" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="HINHNHO" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Period" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Fix" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ISNEW_NEWS" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TopImage" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="ViTri" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="DienTich" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="KinhPhi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="HoanThanh" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ChuDauTu" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="ThietKe" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="ThiCong" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="GiamSat" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="TieuBieu" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="HinhThuc" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QUANGCAO" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SUPPORT" Member="SUPPORTs">
+    <Type Name="SUPPORT">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PHONE" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="IM" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.sysdiagrams" Member="sysdiagrams">
+    <Type Name="sysdiagram">
+      <Column Name="name" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="principal_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="diagram_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="version" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="definition" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" CanBeNull="true" UpdateCheck="Never" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TbleStoreItem" Member="TbleStoreItems">
+    <Type Name="TbleStoreItem">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="sobai" Type="System.String" DbType="Char(20)" CanBeNull="true" />
+      <Column Name="NickName" Type="System.String" DbType="Char(20)" CanBeNull="true" />
+      <Column Name="datestore" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Note" Type="System.String" DbType="Char(255)" CanBeNull="true" />
+      <Column Name="Rate" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Del_id" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TblMessenger" Member="TblMessengers">
+    <Type Name="TblMessenger">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Sender" Type="System.String" DbType="Char(100)" CanBeNull="true" />
+      <Column Name="email1" Type="System.String" DbType="Char(50)" CanBeNull="true" />
+      <Column Name="tel1" Type="System.String" DbType="Char(50)" CanBeNull="true" />
+      <Column Name="address1" Type="System.String" DbType="Char(255)" CanBeNull="true" />
+      <Column Name="Receiver" Type="System.String" DbType="Char(100)" CanBeNull="true" />
+      <Column Name="email2" Type="System.String" DbType="Char(50)" CanBeNull="true" />
+      <Column Name="tel2" Type="System.String" DbType="Char(50)" CanBeNull="true" />
+      <Column Name="address2" Type="System.String" DbType="Char(255)" CanBeNull="true" />
+      <Column Name="Title" Type="System.String" DbType="Char(255)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Note" Type="System.String" DbType="Char(255)" CanBeNull="true" />
+      <Column Name="DateSend" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Del_id" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="News" Type="System.String" DbType="Char(500)" CanBeNull="true" />
+      <Column Name="Store1" Type="System.String" DbType="Char(300)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TINTUC01" Member="TINTUC01s">
+    <Type Name="TINTUC01">
+      <Column Name="NEWS_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CHANNEL_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NHOM" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LOAI_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CAP_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MENU_SUB" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TIEUDE" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="TOMTAT" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="NOIDUNG" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="NGAY" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="USERID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="NOTE" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="STT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TINTUC01_ENG" Member="TINTUC01_ENGs">
+    <Type Name="TINTUC01_ENG">
+      <Column Name="NEWS_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CHANNEL_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NHOM" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LOAI_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CAP_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MENU_SUB" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TIEUDE" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="TOMTAT" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="NOIDUNG" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="NGAY" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="USERID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="NOTE" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="STT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.vanban" Member="vanbans">
+    <Type Name="vanban">
+      <Column Name="idvanban" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="sovb" Type="System.String" DbType="Char(30)" CanBeNull="true" />
+      <Column Name="loaivp" Type="System.String" DbType="Char(20)" CanBeNull="true" />
+      <Column Name="ngaybanhanh" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="tieude" Type="System.String" DbType="Char(800)" CanBeNull="true" />
+      <Column Name="NOIDUNG" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="NGAY" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ktra" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="xoa" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="nguoixem" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="USERID" Type="System.String" DbType="Char(32)" CanBeNull="true" />
+      <Column Name="File1" Type="System.String" DbType="Char(255)" CanBeNull="true" />
+      <Column Name="File2" Type="System.String" DbType="Char(255)" CanBeNull="true" />
+      <Column Name="File3" Type="System.String" DbType="Char(255)" CanBeNull="true" />
+      <Column Name="File4" Type="System.String" DbType="Char(255)" CanBeNull="true" />
+      <Column Name="File5" Type="System.String" DbType="Char(255)" CanBeNull="true" />
+      <Column Name="ghichu" Type="System.String" DbType="Char(255)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.DoContact" Method="DoContact">
+    <Parameter Name="name" Type="System.String" DbType="NVarChar(200)" />
+    <Parameter Name="email" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="sub" Type="System.String" DbType="NVarChar(200)" />
+    <Parameter Name="mess" Type="System.String" DbType="NText" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.GetAdvertise" Method="GetAdvertise">
+    <ElementType Name="GetAdvertiseResult">
+      <Column Name="NOIDUNG" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetServices" Method="GetServices">
+    <Parameter Name="chid" Type="System.Int32" DbType="Int" />
+    <ElementType Name="GetServicesResult">
+      <Column Name="NEWS_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TIEUDE" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetContent" Method="GetContent">
+    <Parameter Name="nid" Type="System.Int32" DbType="Int" />
+    <ElementType Name="GetContentResult">
+      <Column Name="TIEUDE" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="NOIDUNG" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="FATHER" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetTrainingNewsItemCount" Method="GetTrainingNewsItemCount">
+    <ElementType Name="GetTrainingNewsItemCountResult">
+      <Column Name="ItemCount" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetTrainingDetail" Method="GetTrainingDetail">
+    <Parameter Name="nid" Type="System.Int32" DbType="Int" />
+    <ElementType Name="GetTrainingDetailResult">
+      <Column Name="TENSANPHAM" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="NGAY" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="TOMTAT" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="NOIDUNG" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetSitemapOfTrainerDetail" Method="GetSitemapOfTrainerDetail">
+    <Parameter Name="nid" Type="System.Int32" DbType="Int" />
+    <ElementType Name="GetSitemapOfTrainerDetailResult">
+      <Column Name="TENSANPHAM" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="FATHER" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetAdvertise_En" Method="GetAdvertise_En">
+    <ElementType Name="GetAdvertise_EnResult">
+      <Column Name="NOIDUNG" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetContent_En" Method="GetContent_En">
+    <Parameter Name="nid" Type="System.Int32" DbType="Int" />
+    <ElementType Name="GetContent_EnResult">
+      <Column Name="TIEUDE" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="NOIDUNG" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="FATHER" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetServices_En" Method="GetServices_En">
+    <Parameter Name="chid" Type="System.Int32" DbType="Int" />
+    <ElementType Name="GetServices_EnResult">
+      <Column Name="NEWS_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TIEUDE" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetSitemapOfTrainerDetail_En" Method="GetSitemapOfTrainerDetail_En">
+    <Parameter Name="nid" Type="System.Int32" DbType="Int" />
+    <ElementType Name="GetSitemapOfTrainerDetail_EnResult">
+      <Column Name="TENSANPHAM" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="FATHER" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetTrainingDetail_En" Method="GetTrainingDetail_En">
+    <Parameter Name="nid" Type="System.Int32" DbType="Int" />
+    <ElementType Name="GetTrainingDetail_EnResult">
+      <Column Name="TENSANPHAM" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="NGAY" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="TOMTAT" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="NOIDUNG" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetTrainingNewsItemCount_En" Method="GetTrainingNewsItemCount_En">
+    <ElementType Name="GetTrainingNewsItemCount_EnResult">
+      <Column Name="ItemCount" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetTop1Picture" Method="GetTop1Picture">
+    <ElementType Name="GetTop1PictureResult">
+      <Column Name="HINH" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetTopNews" Method="GetTopNews">
+    <ElementType Name="GetTopNewsResult">
+      <Column Name="NEWS_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TENSANPHAM" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetBranchOffice" Method="GetBranchOffice">
+    <ElementType Name="GetBranchOfficeResult">
+      <Column Name="NEWS_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TIEUDE" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetTop1Picture_En" Method="GetTop1Picture_En">
+    <ElementType Name="GetTop1Picture_EnResult">
+      <Column Name="HINH" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetTopNews_En" Method="GetTopNews_En">
+    <ElementType Name="GetTopNews_EnResult">
+      <Column Name="NEWS_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TENSANPHAM" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetBranchOffice_En" Method="GetBranchOffice_En">
+    <ElementType Name="GetBranchOffice_EnResult">
+      <Column Name="NEWS_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TIEUDE" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetActivitiesNewsItemCount" Method="GetActivitiesNewsItemCount">
+    <ElementType Name="GetActivitiesNewsItemCountResult">
+      <Column Name="ItemCount" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetActivitiesNewsItemCount_En" Method="GetActivitiesNewsItemCount_En">
+    <ElementType Name="GetActivitiesNewsItemCount_EnResult">
+      <Column Name="ItemCount" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetEventsNewsItemCount" Method="GetEventsNewsItemCount">
+    <ElementType Name="GetEventsNewsItemCountResult">
+      <Column Name="ItemCount" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetEventsNewsItemCount_En" Method="GetEventsNewsItemCount_En">
+    <ElementType Name="GetEventsNewsItemCount_EnResult">
+      <Column Name="ItemCount" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetPictures" Method="GetPictures">
+    <Parameter Name="startIndex" Type="System.Int32" DbType="Int" />
+    <Parameter Name="endIndex" Type="System.Int32" DbType="Int" />
+    <ElementType Name="GetPicturesResult">
+      <Column Name="HINH" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="RowNumber" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetPictures_En" Method="GetPictures_En">
+    <Parameter Name="startIndex" Type="System.Int32" DbType="Int" />
+    <Parameter Name="endIndex" Type="System.Int32" DbType="Int" />
+    <ElementType Name="GetPictures_EnResult">
+      <Column Name="HINH" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="RowNumber" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetPicturesItemCount" Method="GetPicturesItemCount">
+    <ElementType Name="GetPicturesItemCountResult">
+      <Column Name="ItemCount" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetPicturesItemCount_En" Method="GetPicturesItemCount_En">
+    <ElementType Name="GetPicturesItemCount_EnResult">
+      <Column Name="ItemCount" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetEventsNews" Method="GetEventsNews">
+    <Parameter Name="startIndex" Type="System.Int32" DbType="Int" />
+    <Parameter Name="endIndex" Type="System.Int32" DbType="Int" />
+    <ElementType Name="GetEventsNewsResult">
+      <Column Name="NEWS_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TENSANPHAM" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="NGAY" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="TOMTAT" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="HINH" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="RowNumber" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetEventsNews_En" Method="GetEventsNews_En">
+    <Parameter Name="startIndex" Type="System.Int32" DbType="Int" />
+    <Parameter Name="endIndex" Type="System.Int32" DbType="Int" />
+    <ElementType Name="GetEventsNews_EnResult">
+      <Column Name="NEWS_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TENSANPHAM" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="NGAY" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="TOMTAT" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="HINH" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="RowNumber" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetActivitiesNews" Method="GetActivitiesNews">
+    <Parameter Name="startIndex" Type="System.Int32" DbType="Int" />
+    <Parameter Name="endIndex" Type="System.Int32" DbType="Int" />
+    <ElementType Name="GetActivitiesNewsResult">
+      <Column Name="NEWS_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TENSANPHAM" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="NGAY" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="TOMTAT" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="HINH" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="RowNumber" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetActivitiesNews_En" Method="GetActivitiesNews_En">
+    <Parameter Name="startIndex" Type="System.Int32" DbType="Int" />
+    <Parameter Name="endIndex" Type="System.Int32" DbType="Int" />
+    <ElementType Name="GetActivitiesNews_EnResult">
+      <Column Name="NEWS_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TENSANPHAM" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="NGAY" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="TOMTAT" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="HINH" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="RowNumber" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetTrainingNews" Method="GetTrainingNews">
+    <Parameter Name="startIndex" Type="System.Int32" DbType="Int" />
+    <Parameter Name="endIndex" Type="System.Int32" DbType="Int" />
+    <ElementType Name="GetTrainingNewsResult">
+      <Column Name="NEWS_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TENSANPHAM" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="NGAY" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="TOMTAT" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="HINH" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="RowNumber" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetTrainingNews_En" Method="GetTrainingNews_En">
+    <Parameter Name="startIndex" Type="System.Int32" DbType="Int" />
+    <Parameter Name="endIndex" Type="System.Int32" DbType="Int" />
+    <ElementType Name="GetTrainingNews_EnResult">
+      <Column Name="NEWS_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TENSANPHAM" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="NGAY" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="TOMTAT" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="HINH" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="RowNumber" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetEventsHome" Method="GetEventsHome">
+    <ElementType Name="GetEventsHomeResult">
+      <Column Name="NEWS_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TENSANPHAM" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="NGAY" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="TOMTAT" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="HINH" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetEventsHome_En" Method="GetEventsHome_En">
+    <ElementType Name="GetEventsHome_EnResult">
+      <Column Name="NEWS_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TENSANPHAM" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="NGAY" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="TOMTAT" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="HINH" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetRightPanel" Method="GetRightPanel">
+    <ElementType Name="GetRightPanelResult">
+      <Column Name="TENSANPHAM" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="NOIDUNG" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetRightPanel_En" Method="GetRightPanel_En">
+    <ElementType Name="GetRightPanel_EnResult">
+      <Column Name="TENSANPHAM" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="NOIDUNG" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetRelaxDetail" Method="GetRelaxDetail">
+    <Parameter Name="nid" Type="System.Int32" DbType="Int" />
+    <ElementType Name="GetRelaxDetailResult">
+      <Column Name="TENSANPHAM" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="NGAY" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="TOMTAT" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="NOIDUNG" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetRelaxNewsItemCount" Method="GetRelaxNewsItemCount">
+    <ElementType Name="GetRelaxNewsItemCountResult">
+      <Column Name="ItemCount" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetRelaxNews" Method="GetRelaxNews">
+    <Parameter Name="startIndex" Type="System.Int32" DbType="Int" />
+    <Parameter Name="endIndex" Type="System.Int32" DbType="Int" />
+    <ElementType Name="GetRelaxNewsResult">
+      <Column Name="NEWS_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TENSANPHAM" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="NGAY" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="TOMTAT" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="HINH" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="RowNumber" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetRelaxNews_En" Method="GetRelaxNews_En">
+    <Parameter Name="startIndex" Type="System.Int32" DbType="Int" />
+    <Parameter Name="endIndex" Type="System.Int32" DbType="Int" />
+    <ElementType Name="GetRelaxNews_EnResult">
+      <Column Name="NEWS_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TENSANPHAM" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="NGAY" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="TOMTAT" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="HINH" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="RowNumber" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetRelaxDetail_En" Method="GetRelaxDetail_En">
+    <Parameter Name="nid" Type="System.Int32" DbType="Int" />
+    <ElementType Name="GetRelaxDetail_EnResult">
+      <Column Name="TENSANPHAM" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="NGAY" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="TOMTAT" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="NOIDUNG" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetRelaxNewsItemCount_En" Method="GetRelaxNewsItemCount_En">
+    <ElementType Name="GetRelaxNewsItemCount_EnResult">
+      <Column Name="ItemCount" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>

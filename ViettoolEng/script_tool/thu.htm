@@ -1,0 +1,178 @@
+<html>
+<head>
+<meta NAME="GENERATOR" Content="TOTINHOC-TTCSKH-BDTCAMAU-DT:0780-835999">
+<meta NAME="ROBOTS" CONTENT="noindex">
+<title>Table property </title>
+<link rel="stylesheet" href="../../images/05.css" type="text/css">
+<script language="JavaScript" src="_makecolor.js" type="text/javascript"></script>
+<script language="JavaScript" src="_toolkey.js" type="text/javascript"></script>
+<script language="JavaScript">
+ var sData = dialogArguments;
+ var objtbl=sData.clicktbl;
+ var aDat=document.all;
+ var autoColor;
+ var moreColor;
+ var selectColor="000000";
+ var nameColor;
+ var valueColor;
+ var viewObjColor;
+ var textObjColor;
+	window.onload = function () {
+   {autoDialogHeight();getpropertytable();}
+}
+function autoDialogHeight() {
+  var h = document.body.scrollHeight;
+  var w = document.body.scrollWidth;
+}
+function hiddencolor(){
+  var e = window.event.srcElement;
+  if(e.tagName!="IMG") colorpick.style.visibility="hidden";
+}
+function getpropertytable(){
+ if(objtbl.width!=""){
+    if(objtbl.width!=(objtbl.width).replace("%","")){pixper.value="%";}
+	inwidth.value=(objtbl.width).replace("%","");
+ }else specifywidth.click();
+ if(objtbl.height!="") inheight.value=objtbl.height;
+ else specifyheight.click();
+ 
+ inalign.value=objtbl.align+"";
+ insize.value=objtbl.border;
+ cellspacing.value=objtbl.cellSpacing;
+ cellpadding.value=objtbl.cellPadding;
+ 
+ if(objtbl.bgColor!="") setviewColor(objtbl.bgColor,"bgcltext","bgclview");
+ if(objtbl.borderColor!="") setviewColor(objtbl.borderColor,"bdcltext","bdclview");
+ if(objtbl.borderColorDark!="") setviewColor(objtbl.borderColorDark,"darkcltext","darkclview");
+ if(objtbl.borderColorLight!="") setviewColor(objtbl.borderColorLight,"lightcltext","lightclview");
+}
+function setviewColor(valcolor,textObjCl,viewObjCl){
+	aDat[textObjCl].innerHTML="";
+	aDat[viewObjCl].style.backgroundColor=valcolor;
+	aDat[viewObjCl].style.width=67;
+}
+function Setpropertytable(){
+	if(specifywidth.checked){
+		objtbl.style.width="";
+		if(pixper.value=="%")objtbl.width=inwidth.value+"%";
+		else objtbl.width=inwidth.value;
+	}else objtbl.width="";
+	if(specifyheight.checked)objtbl.height=inheight.value;
+	else objtbl.height="";
+	objtbl.align=inalign.value;
+	objtbl.border=insize.value;
+	objtbl.cellSpacing=cellspacing.value;
+	objtbl.cellPadding=cellpadding.value;
+	objtbl.style.borderCollapse="collapse";
+	objtbl.bordercolor="#111111"
+	//border-collapse: collapse
+
+	if(bgcltext.innerHTML=="Automatic")objtbl.bgColor="";
+	else objtbl.bgColor=bgclview.style.backgroundColor;
+	
+	if(bdcltext.innerHTML=="Automatic")objtbl.borderColor="";
+	else objtbl.borderColor=bdclview.style.backgroundColor;
+	
+	if(darkcltext.innerHTML=="Automatic")objtbl.borderColorDark="";
+	else objtbl.borderColorDark=darkclview.style.backgroundColor;
+	
+	if(lightcltext.innerHTML=="Automatic")objtbl.borderColorLight="";
+	else objtbl.borderColorLight=lightclview.style.backgroundColor;
+	
+	setTimeout("sData.timtableborder0('oDivttt');sData.timtableborder0('oDivndg')",200);
+	
+}
+function showpickcolor(nameObj,colorObj,viewObj,textObj,xObj,yObj){
+	autoColor=colorObj;
+	nameColor=nameObj;
+	viewObjColor=viewObj;
+	textObjColor=textObj;
+	picksample.style.backgroundColor=colorObj;
+	colorpick.style.visibility="visible";
+	colorpick.style.left=xObj;
+	colorpick.style.top=yObj;
+}
+function ChangetableColor(valcolor){
+	aDat[textObjColor].innerHTML="";
+	aDat[viewObjColor].style.backgroundColor="#"+valcolor;
+	aDat[viewObjColor].style.width=67;
+	colorpick.style.visibility="hidden";
+	selectColor=valcolor;
+	len=sData.bdcltableold.length;
+	var koco=true;
+	for(var i=0;i<=len;i++){
+		if(sData.bdcltableold[i]==valcolor){i=len;koco=false;}
+	}
+	if(koco){
+		if(len<8){sData.bdcltableold[len]=valcolor;
+		}else{
+			for(var i=0;i<len;i++){
+				sData.bdcltableold[i]=sData.bdcltableold[i+1];
+			}
+			sData.bdcltableold[len-1]=valcolor;	
+		}
+	}	
+}
+function autotableColor(){
+	aDat[textObjColor].innerHTML="Automatic";
+	aDat[viewObjColor].style.backgroundColor=autoColor;
+	aDat[viewObjColor].style.width=13;
+	colorpick.style.visibility="hidden";
+}
+function _getTblCol() {
+ if (document.createAttribute) {
+	retCol=aDat[viewObjColor].style.backgroundColor;
+   var retCol = dlgColHelperTbl.ChooseColorDlg(aDat[viewObjColor].style.backgroundColor);
+   retCol = retCol.toString(16);
+   if (retCol.length < 6) {
+     var tmp = "000000".substring(0,6-retCol.length);
+     retCol = tmp.concat(retCol);
+   }
+ }
+ if("#"+retCol==aDat[viewObjColor].style.backgroundColor){return;}
+ selectColor= retCol;
+ ChangetableColor(selectColor);
+}
+function clickspecify(oBjsp){
+	if(oBjsp=="specifywidth"){
+		if(!specifywidth.checked){
+			pixper.disabled=true;
+			inwidth.disabled=true;
+			inwidth.style.backgroundColor="#c0c0c0"
+			pixper.style.backgroundColor="#c0c0c0"
+		}else{
+			pixper.disabled=false;inwidth.disabled=false;
+			inwidth.style.backgroundColor="#ffffff"
+			pixper.style.backgroundColor="#ffffff"
+		}
+	}else{ 
+		if(!specifyheight.checked){
+			inheight.disabled=true;
+			inheight.style.backgroundColor="#c0c0c0"
+		}else {
+			inheight.disabled=false;
+			inheight.style.backgroundColor="#ffffff"
+		}
+	} 
+}
+</script>
+</head>
+<body onclick="hiddencolor();">
+<br>
+<center>&nbsp;
+</center>
+<center>&nbsp;
+</center>
+<center>
+</center>
+	<br><br><br><br><br><br><br><br>
+	<table border="0" width="99%" cellspacing="0" cellpadding="0">
+	  <tr>
+	    <td width="100%"></td>
+	  </tr>
+	</table>
+<OBJECT id=dlgColHelperTbl height=0px width=0px 
+classid=clsid:3050f819-98b5-11cf-bb82-00aa00bdce0b></OBJECT>
+<div id="imgfull" style="VISIBILITY: hidden; POSITION: absolute">
+</div></body>
+</html>

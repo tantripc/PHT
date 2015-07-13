@@ -1,0 +1,289 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MainView.master.cs" Inherits="MainView" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Phu Hung Thinh Security</title>
+    <link href="Styles/MyStyle.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body class="bodyDV">
+    <form id="form1" runat="server">
+    <div>
+        <div style="margin-left:auto;margin-right:auto;width:996px;min-height:1px">
+        
+            <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0"
+				        width="996px" height="135px" >
+				        <param name="movie" value="banner01.swf" />
+				        <param name="quality" value="high" />
+				        <param name="wmode" value="transparent">
+				        <embed src="banner01.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer"
+					        type="application/x-shockwave-flash" width="996px" height="135px"
+					        wmode="transparent"></embed>
+			</object>
+			           
+            <div style="float:left;width:996px;height:68px;background:url(images/bg01.gif);background-repeat:no-repeat">
+                <div style="float:left;width:170px;padding-left:40px;padding-top:25px">
+                    <img src="images/flag_viet.gif" /><a href="lang=vi" class="lanLink" style="margin-left:7px">Tiếng Việt</a><a class="lanSplit">&nbsp;&nbsp;|&nbsp;</a>
+                    <img src="images/flag_eng.gif" /><a href="lang=en" class="lanLink" style="margin-left:7px">English</a>
+                </div>
+                <div style="float:left;width:786px;min-height:1px">
+                    <div style="clear:both;height:22px;font-size:0px"></div>
+                    <div style="float:left;width:40px;min-height:1px"></div>
+                    <div style="float:left;width:746px;min-height:1px">
+                        <a id="home" runat="server" href="Home.html" style="float:left;width:87.5px;height:37px;text-align:center" class="topMenuDVLink">Trang chủ</a>
+                        <div style="float:left;width:4px;min-height:1px"></div>
+                        <a id="intro" runat="server" href="Intro.html" style="float:left;width:87.5px;height:37px;text-align:center" class="topMenuDVLink">Giới thiệu</a>
+                        <div style="float:left;width:4px;min-height:1px"></div>
+                        <a id="recruitment" runat="server" href="Recruitment.html" style="float:left;width:87.5px;height:37px;text-align:center" class="topMenuDVLink">Tuyển dụng</a>
+                        <div style="float:left;width:4px;min-height:1px"></div>
+                        <a id="training" runat="server" href="Training.html" style="float:left;width:87.5px;height:37px;text-align:center" class="topMenuDVLink">Đào tạo</a>
+                        <div style="float:left;width:4px;min-height:1px"></div>
+                        <a id="activities" runat="server" href="Activities.html" style="float:left;width:87.5px;height:37px;text-align:center" class="topMenuDVLink">Hoạt động</a>
+                        <div style="float:left;width:4px;min-height:1px"></div>
+                        <a id="events" runat="server" href="Events.html" style="float:left;width:87.5px;height:37px;text-align:center" class="topMenuDVLink">Sự kiện</a>
+                        <div style="float:left;width:4px;min-height:1px"></div>
+                        <a id="contact" runat="server" href="Contact.html" style="float:left;width:87.5px;height:37px;text-align:center" class="topMenuDVLink">Liên hệ</a>
+                        <div style="float:left;width:4px;min-height:1px"></div>
+                        <a id="relax" runat="server" href="Relax.html" style="float:left;width:87.5px;height:37px;text-align:center" class="topMenuDVLink">Góc thư giãn</a>
+                    </div>
+                </div>
+            </div>
+           <%-- <div style="clear:both"></div>--%>
+
+           <%-- <div style="float:left;width:996px;height:173px;background:url(images/bg02.png) no-repeat;text-align:right">--%>
+            <%--<div style="float:left;width:996px;height:340px;background:url(images/banner-pht.jpg) no-repeat;text-align:right">
+                <div style="float:left;width:162px;min-height:1px;margin-top:30px">
+                    <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0"
+				        width="162px" height="140px">
+				        <param name="movie" value="images/logo2.swf" />
+				        <param name="quality" value="high" />
+				        <param name="wmode" value="transparent">
+				        <embed src="images/logo2.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer"
+					        type="application/x-shockwave-flash" width="162px" height="140px"
+					        wmode="transparent"></embed>
+			        </object>
+                </div>
+                <div style="float:left;width:504px;min-height:1px"></div>
+                <div style="float:left;width:330px;min-height:1px">
+                    <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0"
+				        width="330px" height="170px">
+				        <param name="movie" value="images/phuhungthinh.swf" />
+				        <param name="quality" value="high" />
+				        <param name="wmode" value="transparent">
+				        <embed src="images/phuhungthinh.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer"
+					        type="application/x-shockwave-flash" width="330px" height="170px"
+					        wmode="transparent"></embed>
+			        </object>
+                </div>
+            </div>--%>
+            <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0"
+				        width="996px" height="270px">
+				        <param name="movie" value="banner02.swf" />
+				        <param name="quality" value="high" />
+				        <param name="wmode" value="transparent">
+				        <embed src="banner02.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer"
+					        type="application/x-shockwave-flash" width="996px" height="270px"
+					        wmode="transparent"></embed>
+			</object>
+
+
+            <%--<div style="clear:both"></div>--%>
+            <div style="float:left;width:996px;min-height:1px;background:url(images/bg06.png);background-repeat:repeat-y">
+                <div style="float:left;width:996px;min-height:1px;background:url(images/bg03.png);background-repeat:no-repeat">
+                    <div style="float:left;width:177px;min-height:1px">
+                        <div style="float:left;width:177px;min-height:1px;background-image:url(images/bg04.gif);background-repeat:no-repeat;padding-top:10px;padding-bottom:10px;text-align:center" class="leftmenuTitle">
+                            DỊCH VỤ
+                        </div>
+                        <div style="clear:both"></div>
+                        <div style="float:left;width:177px;min-height:1px;background:#000000;font-size:0px">
+                            <asp:Repeater ID="rptServices" runat="server">
+                                <ItemTemplate>
+                                    <asp:HiddenField ID="hfNid" runat="server" Value='<%# Eval("NEWS_ID") %>' />
+                                    <a id="lnkService" runat="server" href='<%# "Service_" + Eval("NEWS_ID") + "_" + Eval("NEWS_ID") + ".html" %>' style="float:left;width:165px;height:28px;line-height:28px;padding-left:6px;padding-right:6px" class="leftmenuLink"><%# Eval("TIEUDE") %></a>
+                                </ItemTemplate>
+                                <SeparatorTemplate>
+                                    <div style="clear:both"></div>
+                                    <div style="float:left;width:177px;height:1px" class="leftmenuHorzline"></div>
+                                    <div style="clear:both"></div>
+                                </SeparatorTemplate>
+                            </asp:Repeater>
+                        </div>
+                        <div style="clear:both;height:10px;font-size:0px"></div>
+                        <div style="margin-left:auto;margin-right:auto;width:177px;min-height:1px;text-align:center">
+                            <asp:Label ID="lblAdvertise" runat="server" Text=""></asp:Label>
+                        </div>
+                        <div style="clear:both;height:10px;font-size:0px"></div>
+                        <div style="margin-left:auto;margin-right:auto;width:157px;min-height:1px">
+                            <div style="float:left;width:157px;min-height:1px" class="hitcounter">
+                                SỐ NGƯỜI TRUY CẬP:
+                            </div>
+                            <div style="clear:both;height:10px;font-size:0px"></div>
+                            <div style="float:left;width:157px;min-height:1px">
+                                <img src="counter/counter.aspx?src=digits.gif&digits=10&id=countername" />
+                            </div>
+                            <div style="clear:both;height:10px;font-size:0px"></div>
+                            <div style="float:left;width:157px;min-height:1px" class="hitcounter">
+                                SỐ KHÁCH ĐANG ONLINE: <%= OnlineActiveUsers.OnlineUsersInstance.OnlineUsers.UsersCount %>
+                            </div>
+                        </div>
+                        <div style="clear:both;height:15px;font-size:0px"></div>
+                    </div>
+                    <div style="float:left;width:10px;min-height:1px"></div>
+                    <div style="float:left;width:622px;min-height:1px">
+                        <div style="clear:both;height:10px;font-size:0px"></div>
+                        <div style="float:left;width:622px;min-height:1px;padding-top:8px;padding-bottom:8px" class="sitemapBlock">
+                            <img width="9px" height="8px" src="images/bt02.gif" style="float:left;margin-left:8px;margin-top:3px" />
+                            <asp:Label ID="lblSitemap1" style="float:left;margin-left:4px" runat="server" CssClass="sitemapText" Text="DỊCH VỤ"></asp:Label>
+                            <a id="sitemapSplit" runat="server" class="sitemapSplit" style="float:left;margin-left:4px;margin-right:4px"></a>
+                            <asp:Label ID="lblSitemap2" style="float:left" runat="server" CssClass="sitemapText" Text=""></asp:Label>
+                        </div>
+                        <div style="clear:both;height:10px;font-size:0px"></div>
+                        <div style="float:left;width:622px;min-height:1px">
+                            <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+                                
+                            </asp:ContentPlaceHolder>
+                        </div>
+                    </div>
+                    <div style="float:left;width:10px;min-height:1px"></div>
+                    <div style="float:left;width:177px;min-height:1px">
+                        <div style="float:left;width:177px;min-height:1px;background-image:url(images/bg04.gif);background-repeat:no-repeat;padding-top:10px;padding-bottom:10px;text-align:center" class="rightmenuTitle">
+                            HÌNH ẢNH
+                        </div>
+                        <div style="clear:both"></div>
+                        <div style="float:left;width:177px;min-height:1px;background:#000000">
+                            <div style="clear:both;height:4px;font-size:0px"></div>
+                            <div style="margin-left:auto;margin-right:auto;width:169px;min-height:1px">
+                                <asp:Image ID="imgPic" Width="169px" Height="130px" runat="server" />
+                            </div>
+                            <div style="clear:both;height:5px;font-size:0px"></div>
+                            <div style="margin-left:auto;margin-right:auto;width:169px;min-height:1px">
+                                <a href="Pictures.html" class="rightmenuMoreLink">Xem thêm &raquo;</a>
+                            </div>
+                            <div style="clear:both;height:4px;font-size:0px"></div>
+                        </div>
+                        <div style="clear:both;height:10px;font-size:0px"></div>
+                        <div style="float:left;width:177px;min-height:1px;background-image:url(images/bg04.gif);background-repeat:no-repeat;padding-top:10px;padding-bottom:10px;text-align:center" class="rightmenuTitle">
+                            TIN TỨC
+                        </div>
+                        <div style="clear:both"></div>
+                        <div style="float:left;width:177px;min-height:1px;background:#000000">
+                            <div style="clear:both;height:4px;font-size:0px"></div>
+                            <div style="margin-left:auto;margin-right:auto;width:169px;min-height:1px;background:#FFFFFF">
+                                <div style="clear:both;height:10px;font-size:0px"></div>
+                                <div style="margin-left:auto;margin-right:auto;width:145px;min-height:1px;font-size:0px">
+                                    <asp:Repeater ID="rptNews" runat="server">
+                                        <ItemTemplate>
+                                            <asp:HiddenField ID="hfNid" runat="server" Value='<%# Eval("NEWS_ID") %>' />
+                                            <div style="float:left;width:145px;min-height:1px">
+                                                <a href='EventDetail_<%# Eval("NEWS_ID") %>.html' class="rightmenuLink"><%# Eval("TENSANPHAM") %></a>
+                                            </div>
+                                        </ItemTemplate>
+                                        <SeparatorTemplate>
+                                            <div style="clear:both;height:5px;font-size:0px"></div>
+                                            <div style="float:left;width:145px;height:1px;font-size:0px" class="rightmenuHorzLine"></div>
+                                            <div style="clear:both;height:4px;font-size:0px"></div>
+                                        </SeparatorTemplate>
+                                    </asp:Repeater>
+                                </div>
+                                <div style="clear:both;height:10px;font-size:0px"></div>
+                            </div>
+                            <div style="clear:both;height:5px;font-size:0px"></div>
+                            <div style="margin-left:auto;margin-right:auto;width:169px;min-height:1px">
+                                <a href="Events.html" class="rightmenuMoreLink">Xem thêm &raquo;</a>
+                            </div>
+                            <div style="clear:both;height:4px;font-size:0px"></div>
+                        </div>
+                        <div style="clear:both;height:10px;font-size:0px"></div>
+                        <div style="float:left;width:177px;min-height:1px;background-image:url(images/bg04.gif);background-repeat:no-repeat;padding-top:10px;padding-bottom:10px;text-align:center" class="rightmenuTitle">
+                            CHI NHÁNH CÔNG TY
+                        </div>
+                        <div style="clear:both"></div>
+                        <div style="float:left;width:177px;min-height:1px;background:#000000">
+                            <div style="clear:both;height:7px;font-size:0px"></div>
+                            <asp:Repeater ID="rptBranches" runat="server">
+                                <ItemTemplate>
+                                    <div style="margin-left:auto;margin-right:auto;width:165px;min-height:1px">
+                                        <a href='BranchDetail_<%# Eval("NEWS_ID") %>.html' class="rightmenuLink2"><%# Eval("TIEUDE") %></a>
+                                    </div>
+                                </ItemTemplate>
+                                <SeparatorTemplate>
+                                    <div style="clear:both;height:5px;font-size:0px"></div>
+                                </SeparatorTemplate>
+                            </asp:Repeater>
+                            <div style="clear:both;height:7px;font-size:0px"></div>
+                        </div>
+                        <div style="clear:both;height:10px;font-size:0px"></div>
+                        <div style="float:left;width:177px;min-height:1px;background-image:url(images/bg04.gif);background-repeat:no-repeat;padding-top:10px;padding-bottom:10px;text-align:center">
+                            <asp:Label ID="lblRPTitle" runat="server" CssClass="rightpanelTitle" Text=""></asp:Label>
+                        </div>
+                        <div style="clear:both"></div>
+                        <div style="float:left;width:177px;min-height:1px;background:#000000">
+                            <div style="clear:both;height:4px;font-size:0px"></div>
+                            <div style="margin-left:auto;margin-right:auto;width:169px;min-height:1px;background:#FFFFFF">
+                                <div style="clear:both;height:10px;font-size:0px"></div>
+                                <div style="margin-left:auto;margin-right:auto;width:145px;min-height:1px;font-size:0px">
+                                    <asp:Label ID="lblRPContent" runat="server" CssClass="rightpanelText" Text=""></asp:Label>
+                                </div>
+                                <div style="clear:both;height:10px;font-size:0px"></div>
+                            </div>
+                            <div style="clear:both;height:4px;font-size:0px"></div>
+                        </div>
+                        <div style="clear:both;height:15px;font-size:0px"></div>
+                    </div>
+                </div>
+            </div>
+            <div style="clear:both"></div>
+            <div style="float:left;width:996px;min-height:1px" class="footerDV">
+                <div style="clear:both;height:10px;font-size:0px"></div>
+                <div style="float:left;width:416px;min-height:1px"></div>
+                <div style="float:left;width:580px;height:29px;line-height:29px;background:url(images/bg08.gif);background-repeat:no-repeat">
+                    <a href="Home.html" class="footerLink" style="margin-left:30px">Trang chủ</a>
+                    <a class="footerSplit" style="margin-left:15px;margin-right:15px">|</a>
+                    <a href="Intro.html" class="footerLink">Giới thiệu</a>
+                    <a class="footerSplit" style="margin-left:15px;margin-right:15px">|</a>
+                    <a href="Training.html" class="footerLink">Đào tạo</a>
+                    <a class="footerSplit" style="margin-left:15px;margin-right:15px">|</a>
+                    <a href="Recruitment.html" class="footerLink">Tuyển dụng</a>
+                    <a class="footerSplit" style="margin-left:15px;margin-right:15px">|</a>
+                    <a href="Contact.html" class="footerLink">Liên hệ</a>
+                </div>
+                <div style="clear:both;height:10px;font-size:0px"></div>
+                <div style="margin-left:auto;margin-right:auto;width:960px;height:1px;font-size:0px" class="footerHorzLine"></div>
+                <div style="clear:both;height:9px;font-size:0px"></div>
+                <div style="margin-left:100px;margin-right:auto;width:900px;min-height:1px">
+                    <div style="float:left;width:740px;min-height:1px">
+                        <div style="float:left;text-align:center; width:740px;min-height:1px" class="footerText1">
+                            CÔNG TY TNHH DỊCH VỤ BẢO VỆ - VỆ SĨ CHUYÊN NGHIỆP
+                        </div>
+                        <div style="float:left;text-align:center; width:740px;min-height:1px" class="footerText2">
+                            PHÚ HƯNG THỊNH
+                        </div>
+                        <div style="float:left;text-align:center; width:740px;min-height:1px" class="footerText">
+                            156/9 Đường Cầu Tân Thuận 2, KP.1, P.Tân Thuận Tây, Q.7, TP Hồ Chí Minh &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  Điện thoại: (84 8) 2 244 6625 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Fax: (84 8) 5 433 2899
+                        </div>
+                        <div style="clear:both;height:5px;font-size:0px"></div>
+                        
+                       
+                        <div style="float:left;text-align:center; width:740px;min-height:1px" class="footerText">
+                            Website: <a href="http://www.phtsecurity.com/" class="footerSubLink" target="_blank">www.phtsecurity.com</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Email: <a href="mailto:phtsecurity@gmail.com" class="footerSubLink">phtsecurity@gmail.com</a>
+                        </div>
+                    </div>
+                    <div style="float:left;width:160px;min-height:1px;text-align:right">
+                        <div style="float:right;width:65px;min-height:1px">
+                            <a href="http://www.davisoft.com.vn" style="text-decoration:none" target="_blank"><img width="62px" height="15px" border="0" src="http://www.davisoft.com.vn/Images/logo_davisoft3.png" /></a>
+                        </div>
+                        <div style="float:right;width:95px;min-height:1px" class="footerText">
+                            Designed by
+                        </div>
+                    </div>
+                </div>
+                <div style="clear:both;height:10px;font-size:0px"></div>
+            </div>
+        </div>
+    </div>
+    </form>
+</body>
+</html>

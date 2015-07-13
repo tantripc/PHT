@@ -1,0 +1,106 @@
+<!--/********************************************************
+*           specialchars.html - part of EditAce             *
+*           copyright Simon Norris 2002                     *
+*           email: si@web-sn.com                            *
+*           EditAce home page: http://www.web-sn.com        *
+*                                                           *
+*           Removal or modification of this notice is       *
+*		    a violation of copyright and the terms of use   *
+*           Last Modified: 24 June 2002                     *
+********************************************************/ -->
+<html>
+<head>
+<title>Special Characters &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </title>
+<link rel="stylesheet" href="../../images/05.css" type="text/css">
+<style>
+.specialChars {background: white;color: black;border: 1px solid black;padding: 2px;width: 15px;height: 15px;font-family: verdana;font-size: 10px;cursor: hand;}
+</style>
+<script>
+var spChars = new Array("&quot;","&lt;","&iexcl;","&pound;","&yen;","&sect;","&copy;",
+"&laquo;","&macr;","&plusmn;","&sup3;","&micro;","&middot;","&sup1;","&raquo;",
+"&frac12;","&iquest;","&Aacute;","&Atilde;","&Aring;","&Ccedil;","&Eacute;","&Euml;","&Iacute;",
+"&Iuml;","&Ntilde;","&Oacute;","&Otilde;","&times;","&Ugrave;","&Ucirc;",
+"&Yacute;","&szlig;","&aacute;","&atilde;","&aring;","&ccedil;","&eacute;","&euml;",
+"&iacute;","&iuml;","&ntilde;","&oacute;","&otilde;",
+"&divide;","&ugrave;","&ucirc;","&yacute;","&yuml;","&mdash;","&rsquo;",
+"&rdquo;","&amp;","&gt;","&cent;","&curren;","&brvbar;",
+"&uml;","&ordf;","&not;","&reg;","&deg;","&sup2;","&acute;","&para;",
+"&cedil;","&ordm;","&frac14;","&frac34;","&Agrave;","&Auml;",
+"&AElig;","&Egrave;","&Ecirc;","&Igrave;","&Icirc;","&ETH;","&Ograve;","&Ocirc;",
+"&Ouml;","&Oslash;","&Uacute;","&Uuml;","&THORN;","&agrave;","&acirc;","&aelig;",
+"&egrave;","&ecirc;","&igrave;","&icirc;","&eth;","&ograve;","&ocirc;","&ouml;","&oslash;","&uacute;",
+"&uuml;","&thorn;","&ndash;","&lsquo;","&ldquo;","&euro;");
+
+function writeTblChars() {
+	var tds = 12;
+	var str = "";
+	
+	for (var i=0; i<spChars.length; ) {
+		str += "<tr>"
+		for (var j=0; j<=tds && i<spChars.length; j++) {
+	      str += "<td align=\"center\" valign=\"middle\" class=\"specialChars\""
+		  str += "ondblclick=\" writeIt('" + spChars[i] + "')\" onclick=\"spcClick('" + spChars[i] + "')\" onmouseover=\"spcOver(this)\" onmouseout=\"spcOut(this)\" title=\"" + spChars[i] + "\">";
+		  str += spChars[i] + "</td>";
+		  i++;
+		}
+		str += "</tr>";
+	}
+	document.write (str);
+}
+function spcClick(ch) {document.all['charVal'].value = ch}
+function spcOver(el) {el.style.background = "lightgrey"}
+function spcOut(el) {el.style.background = "white"}
+function writeIt(val) {
+  if (val == "") { 
+	  alert("Please select a character");
+	  return false;
+  }
+  var ch = new Array();
+  ch['spchar'] = val; 
+  window.returnValue = ch;
+  window.close();
+}
+window.onload = function () {
+  if (top.document.all['editor']) {top.splash.pbar(4);}
+  else {autoDialogHeight();}
+}
+function autoDialogHeight() {
+  var h = document.body.scrollHeight;
+  window.dialogHeight = (h + 30) + "px";
+}
+</script>
+</head>
+<body>
+<table border="0" cellspacing="5" cellpadding="4" width="96%" align="center">
+<tr align="center">
+ <td>
+  <fieldset style="padding-bottom:5px" align="center"><legend>Special Characters</legend><br>
+   <table border="0" cellspacing="0" cellpadding="0">
+    <script>writeTblChars();</script>
+	 <tr><td colspan="14" align="right"><input type="text" size="15" name="charVal"></td></tr>
+   </table>
+  </fieldset>
+ </td>
+</tr>
+<tr>
+ <td colspan="14">
+  <table border="0" cellspacing="0" cellpadding="0" width="95%" align="center">
+   <tr>
+    <td width="100%" colspan="4" align="right">
+	<input type="button" value="Ok" class="buttons" onClick="writeIt(document.all['charVal'].value)">
+	&nbsp;&nbsp;&nbsp;
+	<input type="button" value="Cancel" class="buttons" onClick="window.close()">
+	</td>
+   </tr>
+  </table>
+ </td>
+</tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,206 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta NAME="GENERATOR" Content="TOTINHOC-TTCSKH-BDTCAMAU-DT:0780-835999">
+<meta NAME="ROBOTS" CONTENT="noindex">
+<title>Set Table Attributes
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</title>
+<link rel="stylesheet" href="_popup.css" type="text/css">
+<script language="JavaScript" src="_maketbl1.js" type="text/javascript"></script>
+<SCRIPT LANGUAGE=javascript>
+<!--
+ var tblArr = new Array();
+
+function  _createTable() {
+  // get form info
+  var rows = document.all['rows'].value;
+  var cols = document.all['cols'].value;
+  var width = document.all['width'].value;
+  var border = document.all['border'].value;
+  var cellp = document.all['cellpadding'].value;
+  var cellsp = document.all['cellspacing'].value;
+  var id = document.all['tblid'].value;
+  var tblclass = document.all['tblclass'].value;
+  var valign = document.all['valign'].options(document.all['valign'].selectedIndex).value;
+  var align = document.all['align'].options(document.all['align'].selectedIndex).value;
+  var height = document.all['height'].value;
+  var tdclass = document.all['tdclass'].value;
+  var bgcolor = document.all['chbgcolor'].value;
+  
+  for(var i=0;i<rows;i++){
+	tblInfo.insertRow();
+	for(var j=0;j<cols;j++){
+		tblInfo.rows(i).insertCell();	
+		tblInfo.rows(i).cells(j).width=parseInt(100/cols)+"%";
+		tblInfo.rows(i).cells(j).valign=valign;
+		tblInfo.rows(i).cells(j).align=align;
+		tblInfo.rows(i).cells(j).bgcolor=bgcolor;
+		tblInfo.rows(i).cells(j).Style="font-family: Verdana; font-size: 11px";
+		tblInfo.rows(i).cells(j).innerHTML="&nbsp;";
+		if(tdclass!="")tblInfo.rows(i).cells(j).className=tdclass;		
+	}
+  }
+	 tblInfo.cellpadding = cellp;
+     tblInfo.cellspacing = cellsp;
+     tblInfo.border = border;
+     tblInfo.width = width;
+     textRange = document.body.createTextRange();
+	 textRange.moveToElementText(tbtool);
+	 textRange.execCommand("Copy");
+	for(var i=0;i<rows;i++){
+		tblInfo.deleteRow();
+	}
+  window.returnValue = true;  
+  window.close();
+}
+function update(el) {
+  if((el.value).length==6){
+  document.all['shbgcolor'].style.background = el.value;
+  }
+}
+function showCol() {
+  col = websn_getTblCol();
+  if (col != "" && col != null) {
+    document.all['chbgcolor'].value = col;
+    document.all['shbgcolor'].style.background = col;
+  }
+}
+function websn_getTblCol() {
+ if (document.createAttribute) {
+   var retCol = top.dlgColHelperTbl.ChooseColorDlg();
+   retCol = retCol.toString(16);
+   if (retCol.length < 6) {
+     var tmp = "000000".substring(0,6-retCol.length);
+     retCol = tmp.concat(retCol);
+	 var c = 66;
+   }
+ }
+ else {
+  bascol = showModalDialog("colpick.html", "", "dialogWidth:350px; dialogHeight:370px; status:no; help:no");
+  if (bascol != null) {
+    retCol = bascol['col'];
+  }
+ }
+ return retCol;
+}
+
+
+//-->
+</SCRIPT>
+
+<script>
+window.onload = function () {
+  //if (top.document.all['editor']) {top.splash.pbar(4);}
+   {autoDialogHeight();}
+}
+function autoDialogHeight() {
+  var h = document.body.scrollHeight;
+  window.dialogHeight = (h + 30) + "px";
+}
+</script>
+</head>
+<body>
+<table border="0" cellspacing="5" cellpadding="4" width="95%" align="center">
+<tr>
+ <td>
+  <fieldset style="padding-bottom:5px"><legend>Rows and Columns</legend><br>
+  <table border="0" cellspacing="0" cellpadding="0" width="95%" align="center">
+   <tr>
+    <td width="25%">Rows:</td>
+    <td width="25%"><input type="text" size="2" id="rows" value="2"><br></td>
+    <td width="25%">Columns:</td>
+    <td width="25%"><input type="text" size="2" id="cols" value="2"><br></td>
+   </tr>
+  </table>
+ </fieldset>
+ </td>
+</tr>
+<tr>
+ <td>
+  <fieldset style="padding-bottom:5px"><legend>Table Attributes</legend><br>
+  <table border="0" cellspacing="0" cellpadding="0" width="95%" align="center">
+   <tr>
+    <td width="25%">Width:</td>
+    <td width="25%"><input type="text" size="4" id="width" value="100%"></td>
+    <td width="25%">Border:</td>
+    <td width="25%"><input type="text" size="4" id="border" value="1"></td>
+   </tr>
+   <tr>
+    <td width="25%">Cellpadding:</td>
+    <td width="25%"><input type="text" size="4" id="cellpadding" value="0"></td>
+    <td width="25%">Cellspacing:</td>
+    <td width="25%"><input type="text" size="4" id="cellspacing" value="0"></td>
+   </tr>
+   <tr>
+    <td width="25%">ID:</td>
+    <td width="25%"><input type="text" size="8" id="tblid" value="table1"></td>
+    <td width="25%">Class:</td>
+    <td width="25%"><input type="text" size="8" id="tblclass"></td>
+   </tr>
+  </table>
+ </fieldset>
+ </td>
+</tr>
+<tr>
+ <td>
+  <fieldset style="padding-bottom:5px"><legend>Cell Attributes</legend><br>
+  <table border="0" cellspacing="0" cellpadding="0" width="95%" align="center">
+   <tr>
+    <td width="25%">Vertical Align:</td>
+    <td width="25%">
+	<select id="valign">
+	<option value="top">Top</option>
+	<option value="middle">Middle</option>
+	<option value="bottom">Bottom</option>
+	</select>
+	</td>
+	<td width="25%">Height:</td>
+    <td width="25%"><input type="text" size="4" id="height" value="0"></td>
+   </tr>
+   <tr>
+    <td width="25%">Align:</td>
+    <td width="25%">
+	<select id="align">
+	<option value="left">Left</option>
+	<option value="center">Centre </option>
+	<option value="right">Right</option>
+	</select></td>
+    <td width="25%">Class:</td>
+    <td width="25%"><input type="text" size="8" id="tdclass"></td>
+   </tr>
+   <tr>
+    <td width="25%">Background Colour:</td>
+    <td width="25%"><input type="text" size="15" id="chbgcolor" value="White" onkeyup="update(this)"></td>
+	<td width="25%"><input type="text" size="2" id="shbgcolor"></td>
+	<td width="50%" colspan="2" align="left"><input type="button" class="buttons" value="Choose..." onClick="showCol()"></td>
+   </tr>
+  </table>
+ </fieldset>
+ </td>
+</tr>
+<tr>
+ <td>
+  <table border="0" cellspacing="0" cellpadding="0" width="95%" align="center">
+   <tr>
+    <td width="100%" colspan="4" align="right">
+	<input type="button" value="Ok" class="buttons" onClick="_createTable();">
+	&nbsp;&nbsp;&nbsp;
+	<input type="button" value="Cancel" class="buttons" onClick="window.close()">
+	</td>
+   </tr>
+  </table>
+ </td>
+</tr>
+</table>
+<object id="dlgColHelperTbl" classid="clsid:3050f819-98b5-11cf-bb82-00aa00bdce0b" width="0px" height="0px"></object>
+<div id="tbtool" style="position: absolute;VISIBILITY: hidden;">
+	<table id="tblInfo" bordercolordark="#FFFFFF" bordercolorlight="#272727">
+	</table>
+</div>
+
+</body>
+</html>

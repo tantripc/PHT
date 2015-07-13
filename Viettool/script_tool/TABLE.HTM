@@ -1,0 +1,286 @@
+<HTML>
+<HEAD>
+<TITLE></TITLE>
+<SCRIPT LANGUAGE=javascript>
+<!--
+function onMClick(){
+	var e=window.event.srcElement;
+	if(e.tagName!="TABLE"){
+		cols=e.cellIndex+1;
+		 e=e.parentElement;
+		rows=e.rowIndex+1;
+		//top.insertTable();
+
+		_createTable();
+	}
+}
+
+function xoatrang(){
+	celrow.innerText="Cancel"
+	for(var i=0;i<12;i++){
+		for(var j=0;j<10;j++){
+			tbl.rows(i).cells(j).style.backgroundColor="#ffffff";
+		}
+	}
+}
+function onmout(){
+  var e=window.event.srcElement;
+	if(e.tagName=="BODY"){
+		celrow.innerText="Cancel"
+		for(var i=0;i<12;i++){
+			for(var j=0;j<10;j++){
+				tbl.rows(i).cells(j).style.backgroundColor="#ffffff";
+			}
+		}
+	}
+}
+var cols;
+var rows
+function onmOver(el){
+	var e=window.event.srcElement;
+	if(e.tagName!="TABLE"){
+		var colso=e.cellIndex;
+		 e=e.parentElement;
+		var rowso=e.rowIndex;
+		celrow.innerText=(rowso+1)+" by "+(colso+1)+ " Table"
+		for(var i=0;i<12;i++){
+			for(var j=0;j<10;j++){
+				tbl.rows(i).cells(j).style.backgroundColor="#ffffff";
+			}
+		}
+		for(var i=0;i<=rowso;i++){
+			for(var j=0;j<=colso;j++){
+				tbl.rows(i).cells(j).style.backgroundColor="#000080";
+			}
+		}
+
+	}
+}
+ var tblArr = new Array();
+
+function  _createTable() {
+  for(var i=0;i<rows;i++){
+	tblInfo.insertRow();
+	for(var j=0;j<cols;j++){
+		tblInfo.rows(i).insertCell();	
+		if (i==0){tblInfo.rows(i).cells(j).width=parseInt(100/cols)+"%";}
+		//tblInfo.rows(i).cells(j).valign="top";
+		//tblInfo.rows(i).cells(j).align="left";
+	}
+  }
+	 tblInfo.cellpadding = 0;
+     tblInfo.cellspacing = 0;
+     tblInfo.border = 1;
+     tblInfo.style.borderCollapse="collapse";
+	 tblInfo.bordercolor="#005aaa"
+     tblInfo.width = "100%";
+     tblInfo.className="font_12"
+     textRange = document.body.createTextRange();
+	 textRange.moveToElementText(tbtool);
+	 textRange.execCommand("Copy");
+	 //oDivndg.focus();return;
+	for(var i=0;i<rows;i++){
+		tblInfo.deleteRow();
+	}
+	xoatrang();
+	top.insertTable2();
+}
+
+function update(el) {
+  if((el.value).length==6){
+  document.all['shbgcolor'].style.background = el.value;}
+}
+function showCol() {
+  col = websn_getTblCol();
+  if (col != "" && col != null) {
+    document.all['chbgcolor'].value = col;
+    document.all['shbgcolor'].style.background = col;
+  }
+}
+function websn_getTblCol() {
+ if (document.createAttribute) {
+   var retCol = top.dlgColHelperTbl.ChooseColorDlg();
+   retCol = retCol.toString(16);
+   if (retCol.length < 6) {
+     var tmp = "000000".substring(0,6-retCol.length);
+     retCol = tmp.concat(retCol);
+	 var c = 66;
+   }
+ }
+ else {
+  bascol = showModalDialog("colpick.html", "", "dialogWidth:350px; dialogHeight:370px; status:no; help:no");
+  if (bascol != null) {
+    retCol = bascol['col'];
+  }
+ }
+ return retCol;
+}
+
+//-->
+</SCRIPT>
+
+<link rel="stylesheet" type="text/css" href="../../images/05.css">
+</HEAD>
+<BODY  onmouseover="onmout()" style="border:#002D96 solid 0px; MARGIN:0px;OVERFLOW:hidden">
+<table border="0" cellspacing="2" cellpadding="0" bgcolor="#F6F6F6">
+  <tr>
+    <td width="100%" style="border:0 solid">
+		<table id="tbl" onclick="onMClick()" onmouseover="onmOver(this)" border="0"   cellspacing="3" cellpadding="0" bgcolor="#F6F6F6" style="border:0 #002D96 solid">
+		  <tr>
+		    <td style="font-size:12px;width:20px;heigth:20px;border:1 #002D96 solid" bgcolor="#ffffff">&nbsp;</td>
+		    <td style="font-size:12px;width:20px;heigth:20px;border:1 #002D96 solid" bgcolor="#ffffff">&nbsp;</td>
+		    <td style="font-size:12px;width:20px;heigth:20px;border:1 #002D96 solid" bgcolor="#ffffff">&nbsp;</td>
+		    <td style="font-size:12px;width:20px;heigth:20px;border:1 #002D96 solid" bgcolor="#ffffff">&nbsp;</td>
+		    <td style="font-size:12px;width:20px;heigth:20px;border:1 #002D96 solid" bgcolor="#ffffff">&nbsp;</td>
+		    <td style="font-size:12px;width:20px;heigth:20px;border:1 #002D96 solid" bgcolor="#ffffff">&nbsp;</td>
+		    <td style="font-size:12px;width:20px;heigth:20px;border:1 #002D96 solid" bgcolor="#ffffff">&nbsp;</td>
+		    <td style="font-size:12px;width:20px;heigth:20px;border:1 #002D96 solid" bgcolor="#ffffff">&nbsp;</td>
+		    <td style="font-size:12px;width:20px;heigth:20px;border:1 #002D96 solid" bgcolor="#ffffff">&nbsp;</td>
+		    <td style="font-size:12px;width:20px;heigth:20px;border:1 #002D96 solid" bgcolor="#ffffff">&nbsp;</td>
+		  </tr>
+		  <tr>
+		    <td style="font-size:12px;width:20px;heigth:20px;border:1 #002D96 solid" bgcolor="#ffffff">&nbsp;</td>
+		    <td style="font-size:12px;width:20px;heigth:20px;border:1 #002D96 solid" bgcolor="#ffffff">&nbsp;</td>
+		    <td style="font-size:12px;width:20px;heigth:20px;border:1 #002D96 solid" bgcolor="#008000">&nbsp;</td>
+		    <td style="font-size:12px;width:20px;heigth:20px;border:1 #002D96 solid" bgcolor="#53ADFF">&nbsp;</td>
+		    <td style="font-size:12px;width:20px;heigth:20px;border:1 #002D96 solid" bgcolor="#ffffff">&nbsp;</td>
+		    <td style="font-size:12px;width:20px;heigth:20px;border:1 #002D96 solid" bgcolor="#ffffff">&nbsp;</td>
+		    <td style="font-size:12px;width:20px;heigth:20px;border:1 #002D96 solid" bgcolor="#ffffff">&nbsp;</td>
+		    <td style="font-size:12px;width:20px;heigth:20px;border:1 #002D96 solid" bgcolor="#ffffff">&nbsp;</td>
+		    <td style="font-size:12px;width:20px;heigth:20px;border:1 #002D96 solid" bgcolor="#ffffff">&nbsp;</td>
+		    <td style="font-size:12px;width:20px;heigth:20px;border:1 #002D96 solid" bgcolor="#ffffff">&nbsp;</td>
+		  </tr>
+		  <tr>
+		    <td style="font-size:12px;width:20px;heigth:20px;border:1 #002D96 solid" bgcolor="#ffffff">&nbsp;</td>
+		    <td style="font-size:12px;width:20px;heigth:20px;border:1 #002D96 solid" bgcolor="#ffffff">&nbsp;</td>
+		    <td style="font-size:12px;width:20px;heigth:20px;border:1 #002D96 solid" bgcolor="#ffffff">&nbsp;</td>
+		    <td style="font-size:12px;width:20px;heigth:20px;border:1 #002D96 solid" bgcolor="#ffffff">&nbsp;</td>
+		    <td style="font-size:12px;width:20px;heigth:20px;border:1 #002D96 solid" bgcolor="#ffffff">&nbsp;</td>
+		    <td style="font-size:12px;width:20px;heigth:20px;border:1 #002D96 solid" bgcolor="#ffffff">&nbsp;</td>
+		    <td style="font-size:12px;width:20px;heigth:20px;border:1 #002D96 solid" bgcolor="#ffffff">&nbsp;</td>
+		    <td style="font-size:12px;width:20px;heigth:20px;border:1 #002D96 solid" bgcolor="#ffffff">&nbsp;</td>
+		    <td style="font-size:12px;width:20px;heigth:20px;border:1 #002D96 solid" bgcolor="#ffffff">&nbsp;</td>
+		    <td style="font-size:12px;width:20px;heigth:20px;border:1 #002D96 solid" bgcolor="#ffffff">&nbsp;</td>
+		  </tr>
+		  <tr>
+		    <td style="font-size:12px;width:20px;heigth:20px;border:1 #002D96 solid" bgcolor="#ffffff">&nbsp;</td>
+		    <td style="font-size:12px;width:20px;heigth:20px;border:1 #002D96 solid" bgcolor="#ffffff">&nbsp;</td>
+		    <td style="font-size:12px;width:20px;heigth:20px;border:1 #002D96 solid" bgcolor="#ffffff">&nbsp;</td>
+		    <td style="font-size:12px;width:20px;heigth:20px;border:1 #002D96 solid" bgcolor="#ffffff">&nbsp;</td>
+		    <td style="font-size:12px;width:20px;heigth:20px;border:1 #002D96 solid" bgcolor="#ffffff">&nbsp;</td>
+		    <td style="font-size:12px;width:20px;heigth:20px;border:1 #002D96 solid" bgcolor="#ffffff">&nbsp;</td>
+		    <td style="font-size:12px;width:20px;heigth:20px;border:1 #002D96 solid" bgcolor="#ffffff">&nbsp;</td>
+		    <td style="font-size:12px;width:20px;heigth:20px;border:1 #002D96 solid" bgcolor="#ffffff">&nbsp;</td>
+		    <td style="font-size:12px;width:20px;heigth:20px;border:1 #002D96 solid" bgcolor="#ffffff">&nbsp;</td>
+		    <td style="font-size:12px;width:20px;heigth:20px;border:1 #002D96 solid" bgcolor="#ffffff">&nbsp;</td>
+		  </tr>
+		  <tr>
+		    <td style="font-size:12px;width:20px;heigth:20px;border:1 #002D96 solid" bgcolor="#ffffff">&nbsp;</td>
+		    <td style="font-size:12px;width:20px;heigth:20px;border:1 #002D96 solid" bgcolor="#ffffff">&nbsp;</td>
+		    <td style="font-size:12px;width:20px;heigth:20px;border:1 #002D96 solid" bgcolor="#ffffff">&nbsp;</td>
+		    <td style="font-size:12px;width:20px;heigth:20px;border:1 #002D96 solid" bgcolor="#ffffff">&nbsp;</td>
+		    <td style="font-size:12px;width:20px;heigth:20px;border:1 #002D96 solid" bgcolor="#ffffff">&nbsp;</td>
+		    <td style="font-size:12px;width:20px;heigth:20px;border:1 #002D96 solid" bgcolor="#ffffff">&nbsp;</td>
+		    <td style="font-size:12px;width:20px;heigth:20px;border:1 #002D96 solid" bgcolor="#ffffff">&nbsp;</td>
+		    <td style="font-size:12px;width:20px;heigth:20px;border:1 #002D96 solid" bgcolor="#ffffff">&nbsp;</td>
+		    <td style="font-size:12px;width:20px;heigth:20px;border:1 #002D96 solid" bgcolor="#ffffff">&nbsp;</td>
+		    <td style="font-size:12px;width:20px;heigth:20px;border:1 #002D96 solid" bgcolor="#ffffff">&nbsp;</td>
+		  </tr>
+		  <tr>
+		    <td style="font-size:12px;width:20px;heigth:20px;border:1 #002D96 solid" bgcolor="#ffffff">&nbsp;</td>
+		    <td style="font-size:12px;width:20px;heigth:20px;border:1 #002D96 solid" bgcolor="#ffffff">&nbsp;</td>
+		    <td style="font-size:12px;width:20px;heigth:20px;border:1 #002D96 solid" bgcolor="#ffffff">&nbsp;</td>
+		    <td style="font-size:12px;width:20px;heigth:20px;border:1 #002D96 solid" bgcolor="#ffffff">&nbsp;</td>
+		    <td style="font-size:12px;width:20px;heigth:20px;border:1 #002D96 solid" bgcolor="#ffffff">&nbsp;</td>
+		    <td style="font-size:12px;width:20px;heigth:20px;border:1 #002D96 solid" bgcolor="#ffffff">&nbsp;</td>
+		    <td style="font-size:12px;width:20px;heigth:20px;border:1 #002D96 solid" bgcolor="#ffffff">&nbsp;</td>
+		    <td style="font-size:12px;width:20px;heigth:20px;border:1 #002D96 solid" bgcolor="#ffffff">&nbsp;</td>
+		    <td style="font-size:12px;width:20px;heigth:20px;border:1 #002D96 solid" bgcolor="#ffffff">&nbsp;</td>
+		    <td style="font-size:12px;width:20px;heigth:20px;border:1 #002D96 solid" bgcolor="#ffffff">&nbsp;</td>
+		  </tr>
+		  <tr>
+		    <td style="font-size:12px;width:20px;heigth:20px;border:1 #002D96 solid" bgcolor="#ffffff">&nbsp;</td>
+		    <td style="font-size:12px;width:20px;heigth:20px;border:1 #002D96 solid" bgcolor="#ffffff">&nbsp;</td>
+		    <td style="font-size:12px;width:20px;heigth:20px;border:1 #002D96 solid" bgcolor="#ffffff">&nbsp;</td>
+		    <td style="font-size:12px;width:20px;heigth:20px;border:1 #002D96 solid" bgcolor="#ffffff">&nbsp;</td>
+		    <td style="font-size:12px;width:20px;heigth:20px;border:1 #002D96 solid" bgcolor="#ffffff">&nbsp;</td>
+		    <td style="font-size:12px;width:20px;heigth:20px;border:1 #002D96 solid" bgcolor="#ffffff">&nbsp;</td>
+		    <td style="font-size:12px;width:20px;heigth:20px;border:1 #002D96 solid" bgcolor="#ffffff">&nbsp;</td>
+		    <td style="font-size:12px;width:20px;heigth:20px;border:1 #002D96 solid" bgcolor="#ffffff">&nbsp;</td>
+		    <td style="font-size:12px;width:20px;heigth:20px;border:1 #002D96 solid" bgcolor="#ffffff">&nbsp;</td>
+		    <td style="font-size:12px;width:20px;heigth:20px;border:1 #002D96 solid" bgcolor="#ffffff">&nbsp;</td>
+		  </tr>
+		  <tr>
+		    <td style="font-size:12px;width:20px;heigth:20px;border:1 #002D96 solid" bgcolor="#ffffff">&nbsp;</td>
+		    <td style="font-size:12px;width:20px;heigth:20px;border:1 #002D96 solid" bgcolor="#ffffff">&nbsp;</td>
+		    <td style="font-size:12px;width:20px;heigth:20px;border:1 #002D96 solid" bgcolor="#ffffff">&nbsp;</td>
+		    <td style="font-size:12px;width:20px;heigth:20px;border:1 #002D96 solid" bgcolor="#ffffff">&nbsp;</td>
+		    <td style="font-size:12px;width:20px;heigth:20px;border:1 #002D96 solid" bgcolor="#ffffff">&nbsp;</td>
+		    <td style="font-size:12px;width:20px;heigth:20px;border:1 #002D96 solid" bgcolor="#ffffff">&nbsp;</td>
+		    <td style="font-size:12px;width:20px;heigth:20px;border:1 #002D96 solid" bgcolor="#ffffff">&nbsp;</td>
+		    <td style="font-size:12px;width:20px;heigth:20px;border:1 #002D96 solid" bgcolor="#ffffff">&nbsp;</td>
+		    <td style="font-size:12px;width:20px;heigth:20px;border:1 #002D96 solid" bgcolor="#ffffff">&nbsp;</td>
+		    <td style="font-size:12px;width:20px;heigth:20px;border:1 #002D96 solid" bgcolor="#ffffff">&nbsp;</td>
+		  </tr>
+		  <tr>
+		    <td style="font-size:12px;width:20px;heigth:20px;border:1 #002D96 solid" bgcolor="#ffffff">&nbsp;</td>
+		    <td style="font-size:12px;width:20px;heigth:20px;border:1 #002D96 solid" bgcolor="#ffffff">&nbsp;</td>
+		    <td style="font-size:12px;width:20px;heigth:20px;border:1 #002D96 solid" bgcolor="#ffffff">&nbsp;</td>
+		    <td style="font-size:12px;width:20px;heigth:20px;border:1 #002D96 solid" bgcolor="#ffffff">&nbsp;</td>
+		    <td style="font-size:12px;width:20px;heigth:20px;border:1 #002D96 solid" bgcolor="#ffffff">&nbsp;</td>
+		    <td style="font-size:12px;width:20px;heigth:20px;border:1 #002D96 solid" bgcolor="#ffffff">&nbsp;</td>
+		    <td style="font-size:12px;width:20px;heigth:20px;border:1 #002D96 solid" bgcolor="#ffffff">&nbsp;</td>
+		    <td style="font-size:12px;width:20px;heigth:20px;border:1 #002D96 solid" bgcolor="#ffffff">&nbsp;</td>
+		    <td style="font-size:12px;width:20px;heigth:20px;border:1 #002D96 solid" bgcolor="#ffffff">&nbsp;</td>
+		    <td style="font-size:12px;width:20px;heigth:20px;border:1 #002D96 solid" bgcolor="#ffffff">&nbsp;</td>
+		  </tr>
+		  <tr>
+		    <td style="font-size:12px;width:20px;heigth:20px;border:1 #002D96 solid" bgcolor="#ffffff">&nbsp;</td>
+		    <td style="font-size:12px;width:20px;heigth:20px;border:1 #002D96 solid" bgcolor="#ffffff">&nbsp;</td>
+		    <td style="font-size:12px;width:20px;heigth:20px;border:1 #002D96 solid" bgcolor="#ffffff">&nbsp;</td>
+		    <td style="font-size:12px;width:20px;heigth:20px;border:1 #002D96 solid" bgcolor="#ffffff">&nbsp;</td>
+		    <td style="font-size:12px;width:20px;heigth:20px;border:1 #002D96 solid" bgcolor="#ffffff">&nbsp;</td>
+		    <td style="font-size:12px;width:20px;heigth:20px;border:1 #002D96 solid" bgcolor="#ffffff">&nbsp;</td>
+		    <td style="font-size:12px;width:20px;heigth:20px;border:1 #002D96 solid" bgcolor="#ffffff">&nbsp;</td>
+		    <td style="font-size:12px;width:20px;heigth:20px;border:1 #002D96 solid" bgcolor="#ffffff">&nbsp;</td>
+		    <td style="font-size:12px;width:20px;heigth:20px;border:1 #002D96 solid" bgcolor="#ffffff">&nbsp;</td>
+		    <td style="font-size:12px;width:20px;heigth:20px;border:1 #002D96 solid" bgcolor="#ffffff">&nbsp;</td>
+		  </tr>
+		  <tr>
+		    <td style="font-size:12px;width:20px;heigth:20px;border:1 #002D96 solid" bgcolor="#ffffff">&nbsp;</td>
+		    <td style="font-size:12px;width:20px;heigth:20px;border:1 #002D96 solid" bgcolor="#ffffff">&nbsp;</td>
+		    <td style="font-size:12px;width:20px;heigth:20px;border:1 #002D96 solid" bgcolor="#ffffff">&nbsp;</td>
+		    <td style="font-size:12px;width:20px;heigth:20px;border:1 #002D96 solid" bgcolor="#ffffff">&nbsp;</td>
+		    <td style="font-size:12px;width:20px;heigth:20px;border:1 #002D96 solid" bgcolor="#ffffff">&nbsp;</td>
+		    <td style="font-size:12px;width:20px;heigth:20px;border:1 #002D96 solid" bgcolor="#ffffff">&nbsp;</td>
+		    <td style="font-size:12px;width:20px;heigth:20px;border:1 #002D96 solid" bgcolor="#ffffff">&nbsp;</td>
+		    <td style="font-size:12px;width:20px;heigth:20px;border:1 #002D96 solid" bgcolor="#ffffff">&nbsp;</td>
+		    <td style="font-size:12px;width:20px;heigth:20px;border:1 #002D96 solid" bgcolor="#ffffff">&nbsp;</td>
+		    <td style="font-size:12px;width:20px;heigth:20px;border:1 #002D96 solid" bgcolor="#ffffff">&nbsp;</td>
+		  </tr>
+		  <tr>
+		    <td style="font-size:12px;width:20px;heigth:20px;border:1 #002D96 solid" bgcolor="#ffffff">&nbsp;</td>
+		    <td style="font-size:12px;width:20px;heigth:20px;border:1 #002D96 solid" bgcolor="#ffffff">&nbsp;</td>
+		    <td style="font-size:12px;width:20px;heigth:20px;border:1 #002D96 solid" bgcolor="#ffffff">&nbsp;</td>
+		    <td style="font-size:12px;width:20px;heigth:20px;border:1 #002D96 solid" bgcolor="#ffffff">&nbsp;</td>
+		    <td style="font-size:12px;width:20px;heigth:20px;border:1 #002D96 solid" bgcolor="#ffffff">&nbsp;</td>
+		    <td style="font-size:12px;width:20px;heigth:20px;border:1 #002D96 solid" bgcolor="#ffffff">&nbsp;</td>
+		    <td style="font-size:12px;width:20px;heigth:20px;border:1 #002D96 solid" bgcolor="#ffffff">&nbsp;</td>
+		    <td style="font-size:12px;width:20px;heigth:20px;border:1 #002D96 solid" bgcolor="#ffffff">&nbsp;</td>
+		    <td style="font-size:12px;width:20px;heigth:20px;border:1 #002D96 solid" bgcolor="#ffffff">&nbsp;</td>
+		    <td style="font-size:12px;width:20px;heigth:20px;border:1 #002D96 solid" bgcolor="#ffffff">&nbsp;</td>
+		  </tr>
+		</table>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" id="celrow" width="100%" style="border-top:1 #909090 solid; border-left:1 #909090 solid; border-right:1 #ffffff solid; border-bottom:1 #ffffff solid;font-family:MS Sans Serif;font-size:8pt;height:21px">Cancel</td>
+  </tr>
+</table>
+<object id="dlgColHelperTbl" classid="clsid:3050f819-98b5-11cf-bb82-00aa00bdce0b" width="0px" height="0px"></object>
+<div id="tbtool" style="position: absolute;VISIBILITY: hidden;">
+	<table id="tblInfo" class="lienket2" cellpadding="2" cellspacing="0">
+	</table>
+</div>
+</BODY>
+</HTML>

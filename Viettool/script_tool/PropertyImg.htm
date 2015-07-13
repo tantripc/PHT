@@ -1,0 +1,221 @@
+<HTML>
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<META NAME="GENERATOR" Content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta NAME="GENERATOR" Content="VIETTOOL:0919177544">
+<meta NAME="ROBOTS" CONTENT="noindex">
+<title>Property Image</title>
+<link rel="stylesheet" type="text/css" href="popup.css">
+<link rel="stylesheet" type="text/css" href="../images/05.css">
+<script language="JavaScript" src="_maketbl1.js" type="text/javascript"></script>
+<script language="JavaScript" src="toolkey.js" type="text/javascript"></script>
+<SCRIPT LANGUAGE=javascript>
+<!--
+ var sData = dialogArguments
+ var objimg=sData.clickImg;
+ var widthfull,widthnow;
+ var heightfull,heightnow;
+//-->
+</SCRIPT>
+<script>
+window.onload = function () {
+   {autoDialogHeight();getpropertyImg()}
+}
+function autoDialogHeight() {
+  var h = document.body.scrollHeight;
+  var w = document.body.scrollWidth;
+  //window.dialogHeight = (h + 30) + "px";
+  //window.dialogWidth = (w + 40) + "px";
+}
+function getpropertyImg(){
+ imgfull.innerHTML='<img id="imgfulltool" src="'+objimg.src+'">'
+ heightfull=imgfulltool.height;
+ widthfull=imgfulltool.width;
+ widthnow=objimg.width;
+ heightnow=objimg.height;
+ 
+ ////////////
+ chuthich.value=objimg.title;
+ ///////////////
+ width.value=objimg.width;
+ height.value=objimg.height;
+ 
+ bordermul.value=objimg.border;
+ bordestyle.value=objimg.style.borderStyle;
+ if(objimg.align!="")inalign.value=objimg.align;
+ inhspace.value=objimg.hspace;
+ invspace.value=objimg.vspace;
+ 	
+}
+function SetpropertyImg(){
+  objimg.style.width="";
+  objimg.style.height="";
+  if(specfysize.checked){
+	  objimg.height=height.value;
+	  objimg.width=width.value;
+	  objimg.title=chuthich.value;
+  }else{
+	  objimg.width=widthfull;
+	  objimg.height=heightfull;
+	   objimg.title=chuthich.value;
+
+  }
+  objimg.border=bordermul.value;
+  objimg.style.borderStyle=bordestyle.value;
+  objimg.style.borderColor=bordercolor.value;
+  if(inalign.value!="")objimg.align=inalign.value
+  if(inalign.value=="right"){
+	objimg.style.marginRight="1px";
+	objimg.style.marginLeft="5px";
+  }else if(inalign.value=="left"){
+	objimg.style.marginRight="5px";
+	objimg.style.marginLeft="1px";
+  }else {
+  	objimg.style.marginRight="0px";
+	objimg.style.marginLeft="0px";
+  }
+  objimg.hspace=inhspace.value;
+  objimg.vspace=invspace.value;
+}
+function onchangeheight(){
+	if (keepaspect.checked){
+		width.value=Math.round(widthnow*((height.value/heightnow)*100)/100);
+	}
+}
+function onchangewidth(){
+	if (keepaspect.checked){
+		height.value=Math.round(heightnow*((width.value/widthnow)*100)/100);
+	}
+}
+//-->
+</SCRIPT>
+</head>
+<body bgcolor="#ECE9D8"><BR>ii<input type="text" id="chuthich" size="50" maxlength="220" style="font-family: Verdana; font-size: 8pt">i
+	<table border="0" width="98%" cellspacing="0" cellpadding="0" class="font_12" style="border-collapse: collapse" bordercolor="#111111">
+	  <tr>
+	    <td width="9%">&nbsp;&nbsp;Layout:</td>
+	    <td width="91%"><div class="separator2"> </div></td>
+	  </tr>
+	</table>
+<table border="0" cellspacing="5" cellpadding="0" width="95%" align="center">
+<tr>
+ <td>
+	<table border="0" width="100%" cellspacing="0" cellpadding="0" class="font_12" style="border-collapse: collapse" bordercolor="#111111">
+	  <tr>
+	    <td width="25%">Alignment:</td>
+	    <td width="25%">
+		<select size="1" name="align" id="inalign">
+		  <option value="">Default</option>
+		  <option value="left">Left</option>
+		  <option value="right">Right</option>
+		  <option value="top">Top</option>
+		  <option value="bottom">Bottom</option>
+		  <option value="middle">Middle</option>
+		  <option value="center">Center</option>
+		  <option value="textTop">Texttop</option>
+		  <option value="absMiddle">Absmiddle</option>
+		  <option value="baseLine">Baseline</option>
+		  <option value="absBottom">Absbottom</option>
+		</select>
+	    </td>
+	    <td width="30%">Horizontal Spacing:</td>
+	    <td width="20%">
+			<input type="text" size="4" id="inhspace" value="100" onkeydown="numberKey();">
+	    </td>
+	  </tr>
+	  <tr>
+	    <td width="25%">Border thickness:</td>
+	    <td width="25%">
+			<input type="text" size="4" id="bordermul" value="100" onkeydown="numberKey();">
+	   </td>
+	    <td width="30%">Vertical Spacing:</td>
+	    <td width="20%">
+			<input type="text" size="4" id="invspace" value="100" onkeydown="numberKey();">
+	    </td>
+	  </tr>
+	  <tr>
+	    <td width="25%">Border color:</td>
+	    <td width="25%">
+		<select class="select1" size="1" name="bordercolor" id="bordercolor"  style="width:75px;background-color:#000000;color:#ffffff">
+		  <option selected value="C9C9C9">Xám 1 </option>
+		    <option selected value="E8E8E8">Xám 2 </option>
+		      <option selected value="F2F2F2">Xám 3 </option>
+		  <option value="000000">Đen</option>
+		  <option value="FFFFFF">Trắng</option>
+		</select>
+	    </td>
+	    <td width="30%">Border Style:</td>
+	    <td width="20%">
+		<select size="1" name="bordestyle" id="bordestyle">
+		  <option value="solid" selected>solid</option>
+		  <option value="dotted">dotted</option>
+		  <option value="dashed">dashed</option>
+		  <option value="double">double</option>
+		  <option value="groove">groove</option>
+		  <option value="ridge">ridge</option>
+		  <option value="inset">inset</option>
+		  <option value="outset">outset</option>
+		</select>
+	    </td>
+	  </tr>
+	</table>
+  </tr>
+</table>
+	
+	<table border="0" width="98%" cellspacing="0" cellpadding="0" class="font_12" style="border-collapse: collapse" bordercolor="#111111">
+	  <tr>
+	    <td width="5%">&nbsp;&nbsp;Size:</td>
+	    <td width="95%"><div class="separator2"></div></td>
+	  </tr>
+	</table>
+	
+<table border="0" cellspacing="5" cellpadding="0" width="95%" align="center">
+<tr>
+ <td>
+<table border="0" width="100%" cellspacing="4" cellpadding="0" class="font_12" style="border-collapse: collapse" bordercolor="#111111">
+  <tr>
+    <td width="2%"><input type="checkbox" name="specfysize" value="ON" checked></td>
+    <td width="28%">Specfy Size:</td>
+    <td width="12%">Width:</td>
+    <td width="20%"><input type="text" size="4" id="width" value="100" onkeyup="onchangewidth()" onkeydown="numberKey();"></td>
+    <td width="15%">Height:</td>
+    <td width="24%"><input type="text" size="4" id="height" value="100" onkeyup="onchangeheight()" onkeydown="numberKey();"></td>
+  </tr>
+  <tr>
+    <td width="2%"><input type="checkbox" name="keepaspect" value="ON" checked></td>
+    <td width="28%">Keep aspect ratio</td>
+    <td width="12%"></td>
+    <td width="20%"></td>
+    <td width="15%"></td>
+    <td width="24%"></td>
+  </tr>
+</table>
+ </td>
+</tr>
+</table>
+
+<BR>&nbsp;<div align="center">
+  <center>
+  <table border="0" cellspacing="5" cellpadding="0" width="95%" class="font_12" style="border-collapse: collapse" bordercolor="#111111">
+   <tr>
+    <td width="100%" colspan="4" align="right">
+	<input type="button" value="Ok" class="buttons" onClick="SetpropertyImg();window.close()" id=button2 name=button2>
+	&nbsp;
+	<input type="button" value="Cancel" class="buttons" onClick="window.close();" id=button3 name=button3>
+	&nbsp;
+	<input type="button" value="Apply" class="buttons" onClick="SetpropertyImg();" id=button2 name=button2>
+	</td>
+   </tr>
+  </table>
+  </center>
+</div>
+<object id="dlgColHelperTbl" classid="clsid:3050f819-98b5-11cf-bb82-00aa00bdce0b" width="0px" height="0px"></object>
+<div id="imgfull" style="position: absolute;VISIBILITY: hidden;">
+</div>
+
+</body>
+</html>
+
+</BODY>
+</HTML>
